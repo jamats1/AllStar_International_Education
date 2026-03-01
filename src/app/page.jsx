@@ -14,9 +14,9 @@ import TestimonialsOne from "@/components/TestimonialsOne";
 import Animation from "@/helper/Animation";
 
 export const metadata = {
-  title: "AllStar International Education - LMS, Tutors, Education & Online Courses",
+  title: "Home",
   description:
-    "AllStar International Education is a comprehensive platform for online education, learning management systems (LMS), tutors, educational institutions, and online courses. We provide an engaging and interactive online learning experience for students, educators, and institutions.",
+    "AllStar International Education connects students with expert tutors, online courses, study abroad programs, and scholarship guidance. Start your learning journey today.",
 };
 
 const page = () => {

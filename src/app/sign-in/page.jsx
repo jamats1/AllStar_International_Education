@@ -5,9 +5,9 @@ import SignInInner from "@/components/SignInInner";
 import Animation from "@/helper/Animation";
 
 export const metadata = {
-  title: "AllStar International Education - LMS, Tutors, Education & Online Courses",
+  title: "Sign In",
   description:
-    "AllStar International Education is a comprehensive platform for online education, learning management systems (LMS), tutors, educational institutions, and online courses. We provide an engaging and interactive online learning experience for students, educators, and institutions.",
+    "Sign in to your AllStar International Education account to access courses, bookings, and your learning dashboard.",
 };
 
 const page = () => {

@@ -6,9 +6,9 @@ import HeaderOne from "@/components/HeaderOne";
 import Animation from "@/helper/Animation";
 
 export const metadata = {
-  title: "AllStar International Education - LMS, Tutors, Education & Online Courses",
+  title: "Checkout",
   description:
-    "AllStar International Education is a comprehensive platform for online education, learning management systems (LMS), tutors, educational institutions, and online courses. We provide an engaging and interactive online learning experience for students, educators, and institutions.",
+    "Complete your purchase securely. Finalize payment for courses and tutoring packages at AllStar International Education.",
 };
 
 const page = () => {

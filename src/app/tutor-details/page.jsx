@@ -6,9 +6,9 @@ import TutorDetails from "@/components/TutorDetails";
 import Animation from "@/helper/Animation";
 
 export const metadata = {
-  title: "AllStar International Education - LMS, Tutors, Education & Online Courses",
+  title: "Tutor Profile",
   description:
-    "AllStar International Education is a comprehensive platform for online education, learning management systems (LMS), tutors, educational institutions, and online courses. We provide an engaging and interactive online learning experience for students, educators, and institutions.",
+    "View tutor profile, subjects, availability, and reviews. Book a session with qualified tutors at AllStar International Education.",
 };
 
 const page = () => {
