@@ -1,0 +1,12 @@
+# AllStar International Education – Project Rules
+
+## Edits and structure
+
+- **Text only unless instructed:** When making changes to the site, only change **text content** (copy, labels, headings, placeholders). Do not change structure, layout, components, or markup unless the user explicitly asks for it.
+- **Structure and layout:** Keep existing HTML/JSX structure, CSS classes, and component hierarchy unchanged unless the user specifically requests a structural or layout change.
+- **Sign-in / Sign-up:** These features are kept for later use; do not remove. Only text or styling may be updated if requested.
+
+## Consistency
+
+- Follow existing patterns for navigation, footers, and categories.
+- Category labels align with site goals: CSC Updates, Scholarship News, Study Tips, Visa Guidance, IELTS / TOEFL Tips.
