@@ -21,7 +21,7 @@ const FooterOne = () => {
                 <div className='footer-item__logo'>
                   <Link href='/'>
                     {" "}
-                    <img src='assets/images/logo/logo.png' alt='' />
+                    <img src='assets/images/logo/logo.png' alt='AllStar International Education' />
                   </Link>
                 </div>
                 <p className='my-32'>
@@ -79,7 +79,7 @@ const FooterOne = () => {
                   </li>
                   <li className='mb-16'>
                     <Link
-                      href='/courses'
+                      href='/course'
                       className='text-neutral-500 hover-text-main-600 hover-text-decoration-underline'
                     >
                       Programs

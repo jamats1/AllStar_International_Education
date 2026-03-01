@@ -78,7 +78,7 @@ const CategoryOne = () => {
               Courses on nutrition, fitness training, yoga...
             </p>
             <Link
-              href='/courses'
+              href='/course'
               className='py-12 px-24 bg-white rounded-8 border border-neutral-30 mt-28 fw-semibold text-main-600 hover-bg-main-600 hover-text-white hover-border-main-600'
             >
               14 Course
@@ -101,7 +101,7 @@ const CategoryOne = () => {
               Courses on nutrition, fitness training, yoga...
             </p>
             <Link
-              href='/courses'
+              href='/course'
               className='py-12 px-24 bg-white rounded-8 border border-neutral-30 mt-28 fw-semibold text-main-two-600 hover-bg-main-two-600 hover-text-white hover-border-main-two-600'
             >
               15 Course
@@ -126,7 +126,7 @@ const CategoryOne = () => {
               Courses on nutrition, fitness training, yoga...
             </p>
             <Link
-              href='/courses'
+              href='/course'
               className='py-12 px-24 bg-white rounded-8 border border-neutral-30 mt-28 fw-semibold text-main-three-600 hover-bg-main-three-600 hover-text-white hover-border-main-three-600'
             >
               14 Course
@@ -151,7 +151,7 @@ const CategoryOne = () => {
               Courses on nutrition, fitness training, yoga...
             </p>
             <Link
-              href='/courses'
+              href='/course'
               className='py-12 px-24 bg-white rounded-8 border border-neutral-30 mt-28 fw-semibold text-main-two-600 hover-bg-main-two-600 hover-text-white hover-border-main-two-600'
             >
               21 Course
@@ -176,7 +176,7 @@ const CategoryOne = () => {
               Courses on nutrition, fitness training, yoga...
             </p>
             <Link
-              href='/courses'
+              href='/course'
               className='py-12 px-24 bg-white rounded-8 border border-neutral-30 mt-28 fw-semibold text-main-three-600 hover-bg-main-three-600 hover-text-white hover-border-main-three-600'
             >
               14 Course
@@ -199,7 +199,7 @@ const CategoryOne = () => {
               Courses on nutrition, fitness training, yoga...
             </p>
             <Link
-              href='/courses'
+              href='/course'
               className='py-12 px-24 bg-white rounded-8 border border-neutral-30 mt-28 fw-semibold text-main-two-600 hover-bg-main-two-600 hover-text-white hover-border-main-two-600'
             >
               15 Course

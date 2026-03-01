@@ -15,16 +15,16 @@ const ChildFuture = () => {
                 <span>
                   <i className='ph-bold ph-book-open' />
                 </span>
-                <span>Unlocking Your Child's Futures</span>
+                <span>Unlocking Your Future with AllStar</span>
               </div>
               <h2 className='fw-semibold heading-three text-neutral-700 mb-2 wow bounceIn'>
-                Best Learning Platform For Kid`s
+                Best Learning Platform for Students
               </h2>
             </div>
             <div className='max-w-416-px'>
               <p className='tw-text-base fw-normal text-neutral-700 mb-40 wow bounceInUp'>
                 Explore new skills, deepen existing passions, and get lost in
-                creativity. What you find just might...
+                creativity with AllStar. What you find just might...
               </p>
               <Link
                 href='/course'

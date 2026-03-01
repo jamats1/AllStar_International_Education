@@ -36,7 +36,7 @@ const FooterTwo = () => {
                   </li>
                   <li className='mb-16'>
                     <Link
-                      href='/courses'
+                      href='/course'
                       className='text-white hover-text-main-600 hover-text-decoration-underline'
                     >
                       Programs
@@ -220,7 +220,7 @@ const FooterTwo = () => {
               <div className='footer-item__logo mb-0' data-aos='zoom-in-right'>
                 <Link href='/'>
                   {" "}
-                  <img src='assets/images/logo/logo-white.png' alt='' />
+                  <img src='assets/images/logo/logo-white.png' alt='AllStar International Education' />
                 </Link>
               </div>
               <p

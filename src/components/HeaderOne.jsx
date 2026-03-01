@@ -77,7 +77,7 @@ const HeaderOne = () => {
               {/* Logo Start */}
               <div className='logo'>
                 <Link href='/' className='link'>
-                  <img src='assets/images/logo/logo.png' alt='Logo' />
+                  <img src='assets/images/logo/logo.png' alt='AllStar International Education' />
                 </Link>
               </div>
               {/* Logo End  */}
@@ -196,7 +196,7 @@ const HeaderOne = () => {
         </button>
         <div className='mobile-menu__inner'>
           <Link href='/' className='mobile-menu__logo'>
-            <img src='assets/images/logo/logo.png' alt='Logo' />
+            <img src='assets/images/logo/logo.png' alt='AllStar International Education' />
           </Link>
           <div className='mobile-menu__menu'>
             <ul className='nav-menu flex-align nav-menu--mobile'>

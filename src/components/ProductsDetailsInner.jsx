@@ -129,7 +129,7 @@ const ProductsDetailsInner = () => {
                 <span className='text-uppercase text-md text-success-600 fw-semibold'>
                   IN STOCK
                 </span>
-                <h3 className='mb-0'>Dressy Chair Trendy look.</h3>
+                <h3 className='mb-0'>Featured Learning Resource</h3>
                 <div className='flex-align gap-8'>
                   <div className='flex-align gap-4'>
                     <span className='text-2xl fw-medium text-warning-600 d-flex'>
@@ -294,45 +294,38 @@ const ProductsDetailsInner = () => {
               <div className=''>
                 <h3 className='mb-24'>Overview</h3>
                 <p className='text-neutral-500 max-w-454'>
-                  Google Play Store, shortened to Play Store on the Home screen
-                  and App screen, is Google's official pre-installed app store
-                  on Android-certified devices.
+                  AllStar International Education offers quality learning
+                  materials and resources to support your study abroad and
+                  scholarship journey.
                 </p>
               </div>
             </div>
             <span className='d-block border border-neutral-30 border-dashed my-32' />
             <div className=''>
-              <h4 className='mb-16'>Comfort is Key:</h4>
+              <h4 className='mb-16'>Why This Resource:</h4>
               <p className='text-neutral-500'>
-                When choosing an office chair, prioritize comfort. Look for
-                chairs with ergonomic designs, adjustable features, and ample
-                padding to ensure a comfortable seating experience, especially
-                for long hours of work. Invest in a chair made from durable
-                materials. A high-quality chair not only provides comfort but is
-                also built to withstand daily use, ensuring longevity and value
-                for your investment.
+                AllStar selects materials that support effective learning and
+                exam preparation. Our resources are chosen for clarity,
+                relevance to CSC and study abroad goals, and value for your
+                investment in your education.
               </p>
             </div>
             <span className='d-block border border-neutral-30 border-dashed my-32' />
             <div className=''>
-              <h5 className='mb-16'>Style and Aesthetics:</h5>
+              <h5 className='mb-16'>Quality and Design:</h5>
               <p className='text-neutral-500'>
-                Consider the aesthetics of the chair to complement the overall
-                design of your workspace. Whether you prefer a modern, sleek
-                look or a more traditional style, there are office chairs
-                available to suit various tastes.
+                AllStar learning materials are chosen for quality and clarity.
+                Whether you prefer print or digital, we offer resources to suit
+                different learning styles and study needs.
               </p>
             </div>
             <span className='d-block border border-neutral-30 border-dashed my-32' />
             <div className=''>
-              <h6 className='mb-16'>Support for Good Posture:</h6>
+              <h6 className='mb-16'>Support for Your Studies:</h6>
               <p className='text-neutral-500'>
-                Look for chairs that promote good posture. Proper lumbar support
-                and a design that encourages a neutral spine position contribute
-                to maintaining a healthy and comfortable seated posture. Chairs
-                with swivel functionality and smooth mobility are practical for
-                dynamic work environments. This allows users to easily reach
-                different areas of their workspace without straining.
+                Our resources are designed to support effective study habits and
+                exam preparation. From CSC prep to language and test materials,
+                AllStar helps you stay organized and focused on your goals.
               </p>
             </div>
           </div>

@@ -8,7 +8,7 @@ const FooterFive = () => {
         <div className='container max-w-1536-px'>
           <div className='row row-cols-xxl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4'>
             <div className='col' data-aos='fade-up' data-aos-duration={600}>
-              <img src='assets/images/logo/logo.png' alt='' className='mb-24' />
+              <img src='assets/images/logo/logo.png' alt='AllStar International Education' className='mb-24' />
               <div>
                 <p className='text-neutral-700 text-14 fw-normal mb-24 max-w-240-px'>
                   AllStar prepares students for CSC scholarships and top global
@@ -65,7 +65,7 @@ const FooterFive = () => {
                   </li>
                   <li className='item-hover position-relative mb-16'>
                     <Link
-                      href='/courses'
+                      href='/course'
                       className='hover-margin-left d-flex align-items-center text-neutral-700 text-16 fw-normal hover-text-warning-600'
                     >
                       <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
@@ -83,7 +83,7 @@ const FooterFive = () => {
                   </li>
                   <li className='item-hover position-relative mb-16'>
                     <Link
-                      href='/faqs'
+                      href='/faq'
                       className='hover-margin-left d-flex align-items-center text-neutral-700 text-16 fw-normal hover-text-warning-600'
                     >
                       <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />

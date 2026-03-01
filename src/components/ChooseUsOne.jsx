@@ -24,13 +24,13 @@ const ChooseUsOne = () => {
               <div className='mb-40'>
                 <div className='flex-align gap-8 mb-16 wow bounceInDown'>
                   <span className='w-8 h-8 bg-main-600 rounded-circle' />
-                  <h5 className='text-main-600 mb-0'>Why Choose Us</h5>
+                  <h5 className='text-main-600 mb-0'>Why Choose AllStar</h5>
                 </div>
                 <h2 className='mb-24  wow bounceIn'>
                   Scholarship Success &amp; Global Admission.
                 </h2>
                 <p className='text-neutral-500 text-line-2  wow bounceInUp'>
-                  We prepare students for CSC and study abroad. Expert
+                  AllStar prepares students for CSC and study abroad. Expert
                   instructors, mock exams, and application support.
                 </p>
               </div>
