@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const EventsAllOne = () => {
+  const { formatMoney } = useLocale();
   return (
     <section className='course-list-view py-120 bg-white'>
       <div className='container'>
@@ -59,7 +63,7 @@ const EventsAllOne = () => {
                   </p>
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                  <h4 className='text-main-two-600 mb-0'>$99</h4>
+                  <h4 className='text-main-two-600 mb-0'>{formatMoney(99)}</h4>
                   <Link
                     href='/event-details'
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -113,7 +117,7 @@ const EventsAllOne = () => {
                   </p>
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                  <h4 className='text-main-two-600 mb-0'>$199</h4>
+                  <h4 className='text-main-two-600 mb-0'>{formatMoney(199)}</h4>
                   <Link
                     href='/event-details'
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -167,7 +171,7 @@ const EventsAllOne = () => {
                   </p>
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                  <h4 className='text-main-two-600 mb-0'>$68</h4>
+                  <h4 className='text-main-two-600 mb-0'>{formatMoney(68)}</h4>
                   <Link
                     href='/event-details'
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -221,7 +225,7 @@ const EventsAllOne = () => {
                   </p>
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                  <h4 className='text-main-two-600 mb-0'>$60</h4>
+                  <h4 className='text-main-two-600 mb-0'>{formatMoney(60)}</h4>
                   <Link
                     href='/event-details'
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -275,7 +279,7 @@ const EventsAllOne = () => {
                   </p>
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                  <h4 className='text-main-two-600 mb-0'>$45</h4>
+                  <h4 className='text-main-two-600 mb-0'>{formatMoney(45)}</h4>
                   <Link
                     href='/event-details'
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -329,7 +333,7 @@ const EventsAllOne = () => {
                   </p>
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                  <h4 className='text-main-two-600 mb-0'>$77</h4>
+                  <h4 className='text-main-two-600 mb-0'>{formatMoney(77)}</h4>
                   <Link
                     href='/event-details'
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'

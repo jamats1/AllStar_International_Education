@@ -1,4 +1,9 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+
 const TutorDetails = () => {
+  const { formatMoney } = useLocale();
   return (
     <section className='tutor-details py-120'>
       <div className='container'>
@@ -256,7 +261,7 @@ const TutorDetails = () => {
                           <span className='w-50-percent fw-normal text-neutral-500 text-md'>
                             {" "}
                             <span className='text-main-600 fw-semibold '>
-                              $400{" "}
+                              {formatMoney(400)}{" "}
                             </span>{" "}
                             per month
                           </span>

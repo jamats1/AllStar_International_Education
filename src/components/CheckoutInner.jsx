@@ -3,7 +3,7 @@
 import { useLocale } from "@/context/LocaleContext";
 
 const CheckoutInner = () => {
-  const { t } = useLocale();
+  const { t, formatMoney } = useLocale();
   return (
     <div className='py-120'>
       <div className='container'>
@@ -19,7 +19,7 @@ const CheckoutInner = () => {
                   </div>
                   <div className='text-neutral-500 text-md'>
                     {t("checkout.totalPayable")}{" "}
-                    <span className='text-neutral-700'>$1115</span>
+                    <span className='text-neutral-700'>{formatMoney(1115)}</span>
                   </div>
                 </div>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
@@ -177,7 +177,7 @@ const CheckoutInner = () => {
                       <i className='ph-bold ph-tag' />
                     </span>
                     <span className=''>{t("orderSummary.from")}</span>
-                    <h2 className='mb-0'>$99.99</h2>
+                    <h2 className='mb-0'>{formatMoney(99.99)}</h2>
                   </div>
                   <button
                     type='button'
@@ -193,11 +193,11 @@ const CheckoutInner = () => {
                 <div className='d-flex flex-column gap-24'>
                   <div className='d-flex align-items-center justify-content-between gap-4'>
                     <span className='text-neutral-500'>{t("orderSummary.basePrice")}</span>
-                    <span className='text-neutral-700 fw-medium'>$39.99</span>
+                    <span className='text-neutral-700 fw-medium'>{formatMoney(39.99)}</span>
                   </div>
                   <div className='d-flex align-items-center justify-content-between gap-4'>
                     <span className='text-neutral-500'>{t("orderSummary.stateTax")}</span>
-                    <span className='text-neutral-700 fw-medium'>$5</span>
+                    <span className='text-neutral-700 fw-medium'>{formatMoney(5)}</span>
                   </div>
                   <div className='d-flex align-items-center justify-content-between gap-4'>
                     <span className='text-neutral-500'>{t("orderSummary.shipping")}</span>
@@ -220,12 +220,12 @@ const CheckoutInner = () => {
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
                   <span className='text-neutral-500'>{t("orderSummary.discount")}</span>
-                  <span className='text-main-two-600 fw-medium'>-$9</span>
+                  <span className='text-main-two-600 fw-medium'>{formatMoney(-9)}</span>
                 </div>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 <div className='d-flex align-items-center justify-content-between gap-4'>
                   <span className='text-neutral-500'>{t("orderSummary.total")}</span>
-                  <span className='text-main-600 fw-medium'>$35.99</span>
+                  <span className='text-main-600 fw-medium'>{formatMoney(35.99)}</span>
                 </div>
                 <span className='d-block border border-neutral-30 mt-24 border-dashed' />
                 <button

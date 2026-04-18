@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
 
 const ExploreCourseOne = () => {
-  const { t, localizePath } = useLocale();
+  const { t, localizePath, formatMoney } = useLocale();
   return (
     <section className='explore-course py-120 bg-main-25 position-relative z-1'>
       <img
@@ -221,7 +221,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -314,7 +314,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$499</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(499)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -407,7 +407,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$457</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(457)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -500,7 +500,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -593,7 +593,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$546</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(546)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -686,7 +686,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$345</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(345)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -789,7 +789,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -882,7 +882,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$499</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(499)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -975,7 +975,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$457</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(457)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1068,7 +1068,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1161,7 +1161,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$546</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(546)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1254,7 +1254,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$345</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(345)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1357,7 +1357,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1450,7 +1450,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$499</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(499)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1543,7 +1543,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$457</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(457)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1636,7 +1636,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1729,7 +1729,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$546</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(546)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1822,7 +1822,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$345</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(345)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -1925,7 +1925,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2018,7 +2018,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$499</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(499)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2111,7 +2111,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$457</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(457)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2204,7 +2204,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2297,7 +2297,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$546</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(546)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2390,7 +2390,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$345</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(345)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2493,7 +2493,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2586,7 +2586,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$499</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(499)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2679,7 +2679,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$457</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(457)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2772,7 +2772,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2865,7 +2865,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$546</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(546)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -2958,7 +2958,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$345</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(345)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -3061,7 +3061,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -3154,7 +3154,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$499</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(499)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -3247,7 +3247,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$457</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(457)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -3340,7 +3340,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$148</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(148)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -3433,7 +3433,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$546</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(546)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
@@ -3526,7 +3526,7 @@ const ExploreCourseOne = () => {
                       </div>
                     </div>
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                      <h4 className='mb-0 text-main-two-600'>$345</h4>
+                      <h4 className='mb-0 text-main-two-600'>{formatMoney(345)}</h4>
                       <Link
                         href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'

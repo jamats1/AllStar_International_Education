@@ -572,7 +572,7 @@ export const en = {
     heading: "Favorites Courses",
     removeAll: "Remove All",
     durations: ["9h 36m", "25h 06m", "9h 36m", "9h 36m", "9h 36m", "9h 36m"],
-    prices: ["$148", "$499", "$457", "$148", "$546", "$345"],
+    prices: [148, 499, 457, 148, 546, 345],
     instructors: ["AnikaZ", "Wade", "Cody", "Dustin", "Bruce", "Robert"],
     titles: [
       "Introduction to Digital Marketing",

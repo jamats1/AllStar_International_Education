@@ -34,7 +34,7 @@ export const CartCount = () => {
 };
 
 const CartInner = () => {
-  const { t, localizePath } = useLocale();
+  const { t, localizePath, formatMoney } = useLocale();
   return (
     <div className='py-120'>
       <div className='container'>
@@ -102,7 +102,7 @@ const CartInner = () => {
                         </div>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $11.70
+                        {formatMoney(11.7)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
@@ -111,7 +111,7 @@ const CartInner = () => {
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $66.70
+                        {formatMoney(66.7)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <button className='delete-btn text-lg hover-text-main-600 transition-2'>
@@ -155,7 +155,7 @@ const CartInner = () => {
                         </div>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $5.22
+                        {formatMoney(5.22)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
@@ -164,7 +164,7 @@ const CartInner = () => {
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $32.22
+                        {formatMoney(32.22)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <button className='delete-btn text-lg hover-text-main-600 transition-2'>
@@ -208,7 +208,7 @@ const CartInner = () => {
                         </div>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $6.48
+                        {formatMoney(6.48)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
@@ -217,7 +217,7 @@ const CartInner = () => {
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $18.48
+                        {formatMoney(18.48)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <button className='delete-btn text-lg hover-text-main-600 transition-2'>
@@ -261,7 +261,7 @@ const CartInner = () => {
                         </div>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $17.84
+                        {formatMoney(17.84)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
@@ -270,7 +270,7 @@ const CartInner = () => {
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
-                        $96.84
+                        {formatMoney(96.84)}
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <button className='delete-btn text-lg hover-text-main-600 transition-2'>
@@ -300,7 +300,7 @@ const CartInner = () => {
                     <i className='ph-bold ph-tag' />
                   </span>
                   <span className=''>{t("orderSummary.from")}</span>
-                  <h2 className='mb-0'>$99.99</h2>
+                  <h2 className='mb-0'>{formatMoney(99.99)}</h2>
                 </div>
                 <button
                   type='button'
@@ -316,11 +316,11 @@ const CartInner = () => {
               <div className='d-flex flex-column gap-24'>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
                   <span className='text-neutral-500'>{t("orderSummary.basePrice")}</span>
-                  <span className='text-neutral-700 fw-medium'>$39.99</span>
+                  <span className='text-neutral-700 fw-medium'>{formatMoney(39.99)}</span>
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
                   <span className='text-neutral-500'>{t("orderSummary.stateTax")}</span>
-                  <span className='text-neutral-700 fw-medium'>$5</span>
+                  <span className='text-neutral-700 fw-medium'>{formatMoney(5)}</span>
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
                   <span className='text-neutral-500'>{t("orderSummary.shipping")}</span>
@@ -343,12 +343,12 @@ const CartInner = () => {
               </form>
               <div className='d-flex align-items-center justify-content-between gap-4'>
                 <span className='text-neutral-500'>{t("orderSummary.discount")}</span>
-                <span className='text-main-two-600 fw-medium'>-$9</span>
+                <span className='text-main-two-600 fw-medium'>{formatMoney(-9)}</span>
               </div>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='d-flex align-items-center justify-content-between gap-4'>
                 <span className='text-neutral-500'>{t("orderSummary.total")}</span>
-                <span className='text-main-600 fw-medium'>$35.99</span>
+                <span className='text-main-600 fw-medium'>{formatMoney(35.99)}</span>
               </div>
               <span className='d-block border border-neutral-30 mt-24 border-dashed' />
               <Link

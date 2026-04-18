@@ -8,30 +8,44 @@ import LanguageToggle from "@/components/LanguageToggle";
 
 const HeaderOne = () => {
   let pathname = usePathname();
-  const { t, localizePath } = useLocale();
+  const { t, localizePath, locale } = useLocale();
   const pathActive =
     (pathname || "/").replace(/^\/(en|zh)(?=\/|$)/, "") || "/";
   const [scroll, setScroll] = useState(false);
   const [isMenuActive, setIsMenuActive] = useState(false);
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      import("select2").then(() => {
-        const selectElement = $(".js-example-basic-single");
-        if (selectElement.length > 0) {
-          selectElement.select2(); // Initialize Select2
-        }
-      });
-    }
-
     window.onscroll = () => {
       if (window.pageYOffset < 150) {
         setScroll(false);
       } else if (window.pageYOffset > 150) {
         setScroll(true);
       }
-      return () => (window.onscroll = null);
+    };
+    return () => {
+      window.onscroll = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    let cancelled = false;
+    import("select2").then(() => {
+      if (cancelled) return;
+      const selectElement = $(".js-example-basic-single");
+      selectElement.each(function () {
+        const $el = $(this);
+        if ($el.hasClass("select2-hidden-accessible")) {
+          $el.select2("destroy");
+        }
+      });
+      if (selectElement.length > 0) {
+        selectElement.select2();
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [locale]);
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
@@ -93,9 +107,11 @@ const HeaderOne = () => {
                     <i className='ph-bold ph-squares-four' />
                   </span>
                   <select
+                    key={`header-categories-${locale}`}
                     className='js-example-basic-single border-0'
                     name='state'
                     defaultValue='categories'
+                    aria-label={t("categories.label")}
                   >
                     <option value='categories'>{t("categories.label")}</option>
                     <option value='csc'>{t("categories.cscUpdates")}</option>
@@ -256,8 +272,11 @@ const HeaderOne = () => {
                   <i className='ph-bold ph-squares-four' />
                 </span>
                 <select
+                  key={`mobile-categories-${locale}`}
                   className='js-example-basic-single border-0'
                   name='state'
+                  defaultValue='categories'
+                  aria-label={t("categories.label")}
                 >
                   <option value='categories'>{t("categories.label")}</option>
                   <option value='csc'>{t("categories.cscUpdates")}</option>

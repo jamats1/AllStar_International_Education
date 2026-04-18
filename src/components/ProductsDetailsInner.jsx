@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import { useLocale } from "@/context/LocaleContext";
 
 const ProductsDetailsInner = () => {
-  const { t, localizePath, dict } = useLocale();
+  const { t, localizePath, dict, formatMoney } = useLocale();
   const reviewComments = dict.blogDetails?.comments ?? [];
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
@@ -155,7 +155,7 @@ const ProductsDetailsInner = () => {
                     {t("productDetails.reviewsShort")}
                   </span>
                 </div>
-                <h3 className='mb-0 text-main-600'>$95.25</h3>
+                <h3 className='mb-0 text-main-600'>{formatMoney(95.25)}</h3>
                 <p className='text-neutral-500'>
                   {t("productDetails.shortDesc")}
                 </p>

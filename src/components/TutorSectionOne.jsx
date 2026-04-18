@@ -2,7 +2,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import ReactSlider from "react-slider";
+import { useLocale } from "@/context/LocaleContext";
+
 const TutorSectionOne = () => {
+  const { formatMoneyRange, formatMoney } = useLocale();
   const [values, setValues] = useState([100, 1000]);
   let [sidebarActive, setSidebarActive] = useState(false);
   let sidebarControl = () => {
@@ -225,7 +228,7 @@ const TutorSectionOne = () => {
                             id='amount'
                             readOnly
                             className='custom--range__prices text-neutral-600 text-start text-md fw-medium w-100 text-center bg-transparent border-0 outline-0'
-                            value={`$${values[0]} - $${values[1]}`}
+                            value={formatMoneyRange(values[0], values[1])}
                           />
                         </div>
                       </div>
@@ -461,7 +464,7 @@ const TutorSectionOne = () => {
                       </div>
                       <div className='mt-24 flex-between gap-16 flex-wrap'>
                         <h4 className='mb-0 text-main-two-600'>
-                          $155{" "}
+                          {formatMoney(155)}{" "}
                           <span className='text-inherit text-neutral-200 fw-normal'>
                             per/hr
                           </span>
@@ -529,7 +532,7 @@ const TutorSectionOne = () => {
                       </div>
                       <div className='mt-24 flex-between gap-16 flex-wrap'>
                         <h4 className='mb-0 text-main-two-600'>
-                          $155{" "}
+                          {formatMoney(155)}{" "}
                           <span className='text-inherit text-neutral-200 fw-normal'>
                             per/hr
                           </span>
@@ -597,7 +600,7 @@ const TutorSectionOne = () => {
                       </div>
                       <div className='mt-24 flex-between gap-16 flex-wrap'>
                         <h4 className='mb-0 text-main-two-600'>
-                          $155{" "}
+                          {formatMoney(155)}{" "}
                           <span className='text-inherit text-neutral-200 fw-normal'>
                             per/hr
                           </span>
@@ -665,7 +668,7 @@ const TutorSectionOne = () => {
                       </div>
                       <div className='mt-24 flex-between gap-16 flex-wrap'>
                         <h4 className='mb-0 text-main-two-600'>
-                          $155{" "}
+                          {formatMoney(155)}{" "}
                           <span className='text-inherit text-neutral-200 fw-normal'>
                             per/hr
                           </span>
@@ -733,7 +736,7 @@ const TutorSectionOne = () => {
                       </div>
                       <div className='mt-24 flex-between gap-16 flex-wrap'>
                         <h4 className='mb-0 text-main-two-600'>
-                          $155{" "}
+                          {formatMoney(155)}{" "}
                           <span className='text-inherit text-neutral-200 fw-normal'>
                             per/hr
                           </span>
@@ -801,7 +804,7 @@ const TutorSectionOne = () => {
                       </div>
                       <div className='mt-24 flex-between gap-16 flex-wrap'>
                         <h4 className='mb-0 text-main-two-600'>
-                          $155{" "}
+                          {formatMoney(155)}{" "}
                           <span className='text-inherit text-neutral-200 fw-normal'>
                             per/hr
                           </span>

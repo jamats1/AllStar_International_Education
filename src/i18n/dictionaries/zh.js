@@ -555,7 +555,7 @@ export const zh = {
     heading: "收藏的课程",
     removeAll: "全部移除",
     durations: ["9小时36分", "25小时06分", "9小时36分", "9小时36分", "9小时36分", "9小时36分"],
-    prices: ["$148", "$499", "$457", "$148", "$546", "$345"],
+    prices: [148, 499, 457, 148, 546, 345],
     instructors: ["AnikaZ", "Wade", "Cody", "Dustin", "Bruce", "Robert"],
     titles: [
       "数字营销入门",

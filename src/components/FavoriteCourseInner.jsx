@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
 
 const FavoriteCourseInner = () => {
-  const { t, localizePath, dict } = useLocale();
+  const { t, localizePath, dict, formatMoney } = useLocale();
   const fc = dict.favoriteCourse;
   if (!fc) return null;
   const { titles, durations, prices, instructors } = fc;
@@ -97,7 +97,7 @@ const FavoriteCourseInner = () => {
                     </div>
                   </div>
                   <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
-                    <h4 className='mb-0 text-main-two-600'>{prices[i]}</h4>
+                    <h4 className='mb-0 text-main-two-600'>{formatMoney(prices[i])}</h4>
                     <Link
                       href={localizePath('/apply-admission')}
                       className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'

@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import ReactSlider from "react-slider";
+import { useLocale } from "@/context/LocaleContext";
 
 const TuitionJobs = () => {
+  const { formatMoney, formatMoneyRange } = useLocale();
   const [values, setValues] = useState([100, 1000]);
   let [sidebarActive, setSidebarActive] = useState(false);
   let sidebarControl = () => {
@@ -233,7 +235,7 @@ const TuitionJobs = () => {
                             id='amount'
                             readOnly
                             className='custom--range__prices text-neutral-600 text-start text-md fw-medium w-100 text-center bg-transparent border-0 outline-0'
-                            value={`$${values[0]} - $${values[1]}`}
+                            value={formatMoneyRange(values[0], values[1])}
                           />
                         </div>
                       </div>
@@ -529,7 +531,7 @@ const TuitionJobs = () => {
                           </div>
                           <h6 className='text-lg fw-medium mt-8 mb-0'>
                             {" "}
-                            <span className='text-warning-600'>$800</span> per/m
+                            <span className='text-warning-600'>{formatMoney(800)}</span> per/m
                           </h6>
                         </div>
                         <div className='min-width-max-content'>
@@ -671,7 +673,7 @@ const TuitionJobs = () => {
                           </div>
                           <h6 className='text-lg fw-medium mt-8 mb-0'>
                             {" "}
-                            <span className='text-warning-600'>$800</span> per/m
+                            <span className='text-warning-600'>{formatMoney(800)}</span> per/m
                           </h6>
                         </div>
                         <div className='min-width-max-content'>
@@ -811,7 +813,7 @@ const TuitionJobs = () => {
                           </div>
                           <h6 className='text-lg fw-medium mt-8 mb-0'>
                             {" "}
-                            <span className='text-warning-600'>$800</span> per/m
+                            <span className='text-warning-600'>{formatMoney(800)}</span> per/m
                           </h6>
                         </div>
                         <div className='min-width-max-content'>
@@ -951,7 +953,7 @@ const TuitionJobs = () => {
                           </div>
                           <h6 className='text-lg fw-medium mt-8 mb-0'>
                             {" "}
-                            <span className='text-warning-600'>$800</span> per/m
+                            <span className='text-warning-600'>{formatMoney(800)}</span> per/m
                           </h6>
                         </div>
                         <div className='min-width-max-content'>
@@ -1091,7 +1093,7 @@ const TuitionJobs = () => {
                           </div>
                           <h6 className='text-lg fw-medium mt-8 mb-0'>
                             {" "}
-                            <span className='text-warning-600'>$800</span> per/m
+                            <span className='text-warning-600'>{formatMoney(800)}</span> per/m
                           </h6>
                         </div>
                         <div className='min-width-max-content'>

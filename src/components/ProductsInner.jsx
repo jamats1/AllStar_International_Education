@@ -5,7 +5,7 @@ import ReactSlider from "react-slider";
 import { useLocale } from "@/context/LocaleContext";
 
 const ProductsInner = () => {
-  const { t, localizePath, dict } = useLocale();
+  const { t, localizePath, dict, formatMoney, formatMoneyRange } = useLocale();
   const productNames = dict.productsPage?.names ?? [];
   const [values, setValues] = useState([100, 1000]);
   let [sidebarActive, setSidebarActive] = useState(false);
@@ -232,7 +232,7 @@ const ProductsInner = () => {
                             id='amount'
                             readOnly
                             className='custom--range__prices text-neutral-600 text-start text-md fw-medium w-100 text-center bg-transparent border-0 outline-0'
-                            value={`$${values[0]} - $${values[1]}`}
+                            value={formatMoneyRange(values[0], values[1])}
                           />
                         </div>
                       </div>
@@ -431,7 +431,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -495,7 +495,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -556,7 +556,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -620,7 +620,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -684,7 +684,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -745,7 +745,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -809,7 +809,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -870,7 +870,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -931,7 +931,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -995,7 +995,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -1056,7 +1056,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>
@@ -1120,7 +1120,7 @@ const ProductsInner = () => {
                           </span>
                           <span className='text-lg text-neutral-700'>4.7</span>
                         </div>
-                        <h5 className='text-main-600 mb-0'>$95.25</h5>
+                        <h5 className='text-main-600 mb-0'>{formatMoney(95.25)}</h5>
                       </div>
                     </div>
                   </div>

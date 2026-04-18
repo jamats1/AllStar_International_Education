@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useMemo } from "react";
+import { formatMoney as formatMoneyFn, formatMoneyRange as formatMoneyRangeFn } from "@/i18n/format-money";
 
 const LocaleContext = createContext(null);
 
@@ -23,7 +24,13 @@ export function LocaleProvider({ children, locale, dict }) {
       if (normalized === "/") return `/${locale}`;
       return `/${locale}${normalized}`;
     }
-    return { locale, dict, t, localizePath };
+    function formatMoney(amount) {
+      return formatMoneyFn(amount, locale);
+    }
+    function formatMoneyRange(a, b) {
+      return formatMoneyRangeFn(a, b, locale);
+    }
+    return { locale, dict, t, localizePath, formatMoney, formatMoneyRange };
   }, [locale, dict]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;

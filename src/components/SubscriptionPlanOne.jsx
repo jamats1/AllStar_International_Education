@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const SubscriptionPlanOne = () => {
+  const { formatMoney } = useLocale();
   return (
     <section className='favorite-course py-120'>
       <div className='container'>
@@ -45,7 +49,7 @@ const SubscriptionPlanOne = () => {
                   <i className='ph ph-house' />
                 </div>
                 <h1 className='display-4 fw-bold mb-0 mt-32 text-neutral-700 transition-2'>
-                  $99<span className='text-sm fw-normal'>/Per month</span>{" "}
+                  {formatMoney(99)}<span className='text-sm fw-normal'>/Per month</span>{" "}
                 </h1>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 <ul className='d-flex flex-column gap-16'>
@@ -136,7 +140,7 @@ const SubscriptionPlanOne = () => {
                   <i className='ph-bold ph-tag' />
                 </div>
                 <h1 className='display-4 fw-bold mb-0 mt-32 text-neutral-700 transition-2'>
-                  $129<span className='text-sm fw-normal'>/Per month</span>{" "}
+                  {formatMoney(129)}<span className='text-sm fw-normal'>/Per month</span>{" "}
                 </h1>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 <ul className='d-flex flex-column gap-16'>
@@ -227,7 +231,7 @@ const SubscriptionPlanOne = () => {
                   <i className='ph-bold ph-piggy-bank' />
                 </div>
                 <h1 className='display-4 fw-bold mb-0 mt-32 text-neutral-700 transition-2'>
-                  $199<span className='text-sm fw-normal'>/Per month</span>{" "}
+                  {formatMoney(199)}<span className='text-sm fw-normal'>/Per month</span>{" "}
                 </h1>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 <ul className='d-flex flex-column gap-16'>

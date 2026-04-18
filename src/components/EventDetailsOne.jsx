@@ -2,7 +2,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
+import { useLocale } from "@/context/LocaleContext";
+
 const EventDetailsOne = () => {
+  const { formatMoney } = useLocale();
   let [isOpen, setIsOpen] = useState(false);
   let [count, setCount] = useState(1);
   return (
@@ -155,7 +158,7 @@ const EventDetailsOne = () => {
                         <i className='ph-fill ph-play' />
                       </span>
                       <h3 className='text-white bg-main-two-600 mb-0 px-32 py-16 rounded-top-start-8px position-absolute inset-inline-end-0 inset-block-end-0 fw-medium'>
-                        $199
+                        {formatMoney(199)}
                       </h3>
                     </div>
                   </div>
@@ -244,7 +247,7 @@ const EventDetailsOne = () => {
                   </div>
                   <div className='rounded-12 bg-main-25 p-24 '>
                     <div className=' flex-between flex-wrap gap-16 border-bottom border-dashed border-top-0 border-end-0 border-start-0 border-neutral-40 pb-16 mb-16'>
-                      <h2 className='mb-0'>$199</h2>
+                      <h2 className='mb-0'>{formatMoney(199)}</h2>
                       <div className='border border-neutral-30 rounded-pill p-4 bg-white max-w-176 w-100 d-flex justify-content-between'>
                         <button
                           onClick={() => setCount(count - 1)}
@@ -292,7 +295,7 @@ const EventDetailsOne = () => {
                         </span>
                       </div>
                       <span className='text-lg fw-medium text-neutral-700'>
-                        $199
+                        {formatMoney(199)}
                       </span>
                     </div>
                   </div>
