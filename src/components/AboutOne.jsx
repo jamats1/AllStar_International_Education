@@ -2,8 +2,10 @@
 import Link from "next/link";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { useLocale } from "@/context/LocaleContext";
 
 const AboutOne = () => {
+  const { t, localizePath } = useLocale();
   return (
     <section className='about py-120 position-relative z-1 mash-bg-main mash-bg-main-two'>
       <img
@@ -31,8 +33,8 @@ const AboutOne = () => {
                     <i className='ph ph-watch' />
                   </span>
                   <div>
-                    <h6 className='mb-4'>Expert Prep</h6>
-                    <span className='text-neutral-500'>CSC &amp; Study Abroad</span>
+                    <h6 className='mb-4'>{t("about.badge")}</h6>
+                    <span className='text-neutral-500'>{t("about.badgeSub")}</span>
                   </div>
                 </div>
                 <div className='row gy-4'>
@@ -64,7 +66,7 @@ const AboutOne = () => {
                             </h1>
                           )}
                         </VisibilitySensor>
-                        <span className='text-white'>Years of experience</span>
+                        <span className='text-white'>{t("about.yearsExp")}</span>
                       </div>
                       <div
                         className='bg-neutral-700 rounded-12 text-center py-24 px-2 w-50-percent'
@@ -80,7 +82,7 @@ const AboutOne = () => {
                             </h1>
                           )}
                         </VisibilitySensor>
-                        <span className='text-white'>Students placed</span>
+                        <span className='text-white'>{t("about.studentsPlaced")}</span>
                       </div>
                     </div>
                     <img
@@ -102,15 +104,10 @@ const AboutOne = () => {
                 <div className='mb-40'>
                   <div className='flex-align gap-8 mb-16 wow bounceInDown'>
                     <span className='w-8 h-8 bg-main-600 rounded-circle' />
-                    <h5 className='text-main-600 mb-0 '>About AllStar</h5>
+                    <h5 className='text-main-600 mb-0 '>{t("about.sectionKicker")}</h5>
                   </div>
-                  <h2 className='mb-24 wow bounceIn'>
-                    Where Students Win Scholarships
-                  </h2>
-                  <p className='text-neutral-500 text-line-2 wow bounceInUp'>
-                    We prepare high-potential students for CSC scholarships and
-                    admission to leading global universities.
-                  </p>
+                  <h2 className='mb-24 wow bounceIn'>{t("about.heading")}</h2>
+                  <p className='text-neutral-500 text-line-2 wow bounceInUp'>{t("about.lead")}</p>
                 </div>
                 <div
                   className='flex-align align-items-start gap-28 mb-32'
@@ -121,11 +118,8 @@ const AboutOne = () => {
                     <img src='assets/images/icons/about-img1.png' alt='' />
                   </span>
                   <div className='flex-grow-1'>
-                    <h4 className='text-neutral-500 mb-12'>Our Mission</h4>
-                    <p className='text-neutral-500'>
-                      We help students win CSC scholarships and secure
-                      admission to leading universities worldwide.
-                    </p>
+                    <h4 className='text-neutral-500 mb-12'>{t("about.missionTitle")}</h4>
+                    <p className='text-neutral-500'>{t("about.missionText")}</p>
                   </div>
                 </div>
                 <div
@@ -137,11 +131,8 @@ const AboutOne = () => {
                     <img src='assets/images/icons/about-img2.png' alt='' />
                   </span>
                   <div className='flex-grow-1'>
-                    <h4 className='text-neutral-500 mb-12'>Our Vision</h4>
-                    <p className='text-neutral-500'>
-                      From CSC exam prep to study abroad applications, we guide
-                      you to scholarship and admission success.
-                    </p>
+                    <h4 className='text-neutral-500 mb-12'>{t("about.visionTitle")}</h4>
+                    <p className='text-neutral-500'>{t("about.visionText")}</p>
                   </div>
                 </div>
                 <div
@@ -150,10 +141,10 @@ const AboutOne = () => {
                   data-aos-duration={600}
                 >
                   <Link
-                    href='/course'
+                    href={localizePath("/course")}
                     className='btn btn-main rounded-pill flex-align gap-8'
                   >
-                    Read More
+                    {t("common.readMore")}
                     <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                   </Link>
                   <div className='flex-align gap-20'>
@@ -166,7 +157,7 @@ const AboutOne = () => {
                       <span className='mb-4'>
                         <img src='assets/images/thumbs/signature.png' alt='' />
                       </span>
-                      <span className='text-sm d-block'>AllStar Team</span>
+                      <span className='text-sm d-block'>{t("about.team")}</span>
                     </div>
                   </div>
                 </div>

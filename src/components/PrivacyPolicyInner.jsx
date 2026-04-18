@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const PrivacyPolicyInner = () => {
+  const { t, localizePath } = useLocale();
   return (
     <section className='privacy-policy py-120'>
       <div className='container'>
@@ -8,212 +12,77 @@ const PrivacyPolicyInner = () => {
           <div className='col-lg-8'>
             <div className='d-flex flex-column gap-40'>
               <div className=''>
-                <h1 className='mb-16'>Information We Collect</h1>
-                <p className='text-neutral-700'>
-                  Thank you for choosing AllStar! Your privacy is important to
-                  us, and we are committed to protecting your personal
-                  information. This Privacy Policy explains how AllStar collects,
-                  uses, discloses, and safeguards your information when you use
-                  our education and online course platform, including any
-                  community features.
-                </p>
+                <h1 className='mb-16'>{t("privacyPage.collectTitle")}</h1>
+                <p className='text-neutral-700'>{t("privacyPage.collectIntro")}</p>
               </div>
               <div className=''>
-                <h3 className='mb-16'>Account Information:</h3>
+                <h3 className='mb-16'>{t("privacyPage.accountHeading")}</h3>
                 <ul className='list-dotted d-flex flex-column gap-24'>
-                  <li className='text-neutral-700'>
-                    {" "}
-                    When you create an account, we collect your name, email
-                    address, and other necessary details to create and manage
-                    your account.
-                  </li>
-                  <li className='text-neutral-700'>
-                    {" "}
-                    We implement security measures to protect your information
-                    from unauthorized access, disclosure, alteration, or
-                    destruction.
-                  </li>
+                  <li className='text-neutral-700'>{t("privacyPage.accountLi1")}</li>
+                  <li className='text-neutral-700'>{t("privacyPage.accountLi2")}</li>
                 </ul>
               </div>
               <div className=''>
-                <h4 className='mb-16'>Course Enrollment:</h4>
+                <h4 className='mb-16'>{t("privacyPage.enrollmentHeading")}</h4>
                 <ul className='list-dotted d-flex flex-column gap-24'>
-                  <li className='text-neutral-700'>
-                    If you enroll in a course, we collect information related to
-                    your course progress, performance, and completion.
-                  </li>
-                  <li className='text-neutral-700'>
-                    You can opt-out of promotional emails, but we will still
-                    send essential communications related to your account and
-                    courses.
-                  </li>
+                  <li className='text-neutral-700'>{t("privacyPage.enrollmentLi1")}</li>
+                  <li className='text-neutral-700'>{t("privacyPage.enrollmentLi2")}</li>
                 </ul>
               </div>
               <div className=''>
-                <h5 className='mb-16'>Community Participation:</h5>
+                <h5 className='mb-16'>{t("privacyPage.communityHeading")}</h5>
                 <ul className='list-dotted d-flex flex-column gap-24'>
-                  <li className='text-neutral-700'>
-                    When you engage in community discussions or forums, we
-                    collect information related to your posts, comments, and
-                    interactions with other users.
-                  </li>
+                  <li className='text-neutral-700'>{t("privacyPage.communityLi1")}</li>
                 </ul>
               </div>
               <div className=''>
-                <h6 className='mb-16'> Payment Information:</h6>
+                <h6 className='mb-16'>{t("privacyPage.paymentHeading")}</h6>
                 <ul className='list-dotted d-flex flex-column gap-24'>
-                  <li className='text-neutral-700'>
-                    {" "}
-                    If you make a purchase, we collect payment information, such
-                    as credit card details, to process transactions securely.
-                  </li>
-                  <li className='text-neutral-700'>
-                    {" "}
-                    We may update this Privacy Policy periodically, and any
-                    changes will be posted on this page. It's your
-                    responsibility to review the policy for updates.
-                  </li>
+                  <li className='text-neutral-700'>{t("privacyPage.paymentLi1")}</li>
+                  <li className='text-neutral-700'>{t("privacyPage.paymentLi2")}</li>
                 </ul>
               </div>
             </div>
-            <p className='text-neutral-700 mt-32'>
-              Please remember to replace "Date" and "Contact" with the actual
-              date and contact information for your platform. Additionally,
-              ensure that the policy aligns with the legal requirements
-              applicable to your region.
-            </p>
+            <p className='text-neutral-700 mt-32'>{t("privacyPage.closingNote")}</p>
           </div>
           <div className='col-lg-4'>
             <div className='border border-neutral-30 rounded-12 bg-main-25 p-32 bg-main-25'>
-              <h4 className='mb-16'>More Some Policy</h4>
+              <h4 className='mb-16'>{t("privacyPage.morePolicy")}</h4>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
-              <div className='d-flex align-items-center justify-content-between gap-24'>
-                <div className='d-flex align-items-center gap-16'>
-                  <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
-                    <i className='ph ph-file-text' />
-                  </span>
-                  <div>
-                    <h6 className='text-xl mb-8 fw-medium'>Personalization</h6>
-                    <span className='text-neutral-500 text-sm'>
-                      Download &amp; view our Policy
-                    </span>
+              {[
+                t("privacyPage.personalization"),
+                t("privacyPage.communication"),
+                t("privacyPage.analytics"),
+                t("privacyPage.sharingInfo"),
+                t("privacyPage.serviceProvider"),
+                t("privacyPage.security"),
+              ].map((heading) => (
+                <div key={heading}>
+                  <div className='d-flex align-items-center justify-content-between gap-24'>
+                    <div className='d-flex align-items-center gap-16'>
+                      <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
+                        <i className='ph ph-file-text' />
+                      </span>
+                      <div>
+                        <h6 className='text-xl mb-8 fw-medium'>{heading}</h6>
+                        <span className='text-neutral-500 text-sm'>{t("privacyPage.downloadBlurb")}</span>
+                      </div>
+                    </div>
+                    <button
+                      type='button'
+                      className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
+                    >
+                      <i className='ph ph-download-simple' />
+                    </button>
                   </div>
+                  <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 </div>
-                <button
-                  type='button'
-                  className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
-                >
-                  <i className='ph ph-download-simple' />
-                </button>
-              </div>
-              <span className='d-block border border-neutral-30 my-24 border-dashed' />
-              <div className='d-flex align-items-center justify-content-between gap-24'>
-                <div className='d-flex align-items-center gap-16'>
-                  <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
-                    <i className='ph ph-file-text' />
-                  </span>
-                  <div>
-                    <h6 className='text-xl mb-8 fw-medium'>Communication</h6>
-                    <span className='text-neutral-500 text-sm'>
-                      Download &amp; view our Policy
-                    </span>
-                  </div>
-                </div>
-                <button
-                  type='button'
-                  className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
-                >
-                  <i className='ph ph-download-simple' />
-                </button>
-              </div>
-              <span className='d-block border border-neutral-30 my-24 border-dashed' />
-              <div className='d-flex align-items-center justify-content-between gap-24'>
-                <div className='d-flex align-items-center gap-16'>
-                  <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
-                    <i className='ph ph-file-text' />
-                  </span>
-                  <div>
-                    <h6 className='text-xl mb-8 fw-medium'>Analytics</h6>
-                    <span className='text-neutral-500 text-sm'>
-                      Download &amp; view our Policy
-                    </span>
-                  </div>
-                </div>
-                <button
-                  type='button'
-                  className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
-                >
-                  <i className='ph ph-download-simple' />
-                </button>
-              </div>
-              <span className='d-block border border-neutral-30 my-24 border-dashed' />
-              <div className='d-flex align-items-center justify-content-between gap-24'>
-                <div className='d-flex align-items-center gap-16'>
-                  <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
-                    <i className='ph ph-file-text' />
-                  </span>
-                  <div>
-                    <h6 className='text-xl mb-8 fw-medium'>
-                      Sharing Your Info
-                    </h6>
-                    <span className='text-neutral-500 text-sm'>
-                      Download &amp; view our Policy
-                    </span>
-                  </div>
-                </div>
-                <button
-                  type='button'
-                  className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
-                >
-                  <i className='ph ph-download-simple' />
-                </button>
-              </div>
-              <span className='d-block border border-neutral-30 my-24 border-dashed' />
-              <div className='d-flex align-items-center justify-content-between gap-24'>
-                <div className='d-flex align-items-center gap-16'>
-                  <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
-                    <i className='ph ph-file-text' />
-                  </span>
-                  <div>
-                    <h6 className='text-xl mb-8 fw-medium'>Service Provider</h6>
-                    <span className='text-neutral-500 text-sm'>
-                      Download &amp; view our Policy
-                    </span>
-                  </div>
-                </div>
-                <button
-                  type='button'
-                  className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
-                >
-                  <i className='ph ph-download-simple' />
-                </button>
-              </div>
-              <span className='d-block border border-neutral-30 my-24 border-dashed' />
-              <div className='d-flex align-items-center justify-content-between gap-24'>
-                <div className='d-flex align-items-center gap-16'>
-                  <span className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl'>
-                    <i className='ph ph-file-text' />
-                  </span>
-                  <div>
-                    <h6 className='text-xl mb-8 fw-medium'>Security</h6>
-                    <span className='text-neutral-500 text-sm'>
-                      Download &amp; view our Policy
-                    </span>
-                  </div>
-                </div>
-                <button
-                  type='button'
-                  className='w-56 h-56 rounded-circle bg-white border border-neutral-30 d-flex justify-content-center align-items-center text-neutral-500 text-2xl hover-bg-main-600 hover-border-main-600 hover-text-white'
-                >
-                  <i className='ph ph-download-simple' />
-                </button>
-              </div>
-              <span className='d-block border border-neutral-30 my-24 border-dashed' />
+              ))}
               <Link
-                href='/sign-in'
+                href={localizePath('/sign-in')}
                 className='h6 mb-0 text-main-600 fw-semibold hover-text-decoration-underline'
               >
-                See All
+                {t("common.seeAll")}
                 <i className='ph-bold ph-arrow-right' />
               </Link>
             </div>

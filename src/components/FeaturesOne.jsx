@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
 import Slider from "react-slick";
+import { useLocale } from "@/context/LocaleContext";
 
 const FeaturesOne = () => {
+  const { t, localizePath } = useLocale();
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -52,13 +54,8 @@ const FeaturesOne = () => {
       />
       <div className='container'>
         <div className='section-heading text-center'>
-          <h2 className='mb-24 wow bounceIn'>
-            CSC Prep &amp; Study Abroad Programs
-          </h2>
-          <p className='wow bounceInUp'>
-            HSK, Math, Physics, IELTS, TOEFL &amp; application support.
-            Expert-led prep for scholarship success.
-          </p>
+          <h2 className='mb-24 wow bounceIn'>{t("features.heading")}</h2>
+          <p className='wow bounceInUp'>{t("features.sub")}</p>
         </div>
         <Slider {...settings} className='features-slider'>
           <div className='px-8' data-aos='zoom-in' data-aos-duration={400}>
@@ -70,18 +67,13 @@ const FeaturesOne = () => {
                   alt=''
                 />
               </span>
-              <h4 className='mb-16 transition-1 item-hover__text'>
-                HSK &amp; Chinese
-              </h4>
-              <p className='transition-1 item-hover__text text-line-2'>
-                For CSC prep and scholarship applications. Build the level you
-                need.
-              </p>
+              <h4 className='mb-16 transition-1 item-hover__text'>{t("features.hskTitle")}</h4>
+              <p className='transition-1 item-hover__text text-line-2'>{t("features.hskDesc")}</p>
               <Link
-                href='/course'
+                href={localizePath("/course")}
                 className='item-hover__text flex-align gap-8 text-main-600 mt-24 hover-text-decoration-underline transition-1'
               >
-                View Category
+                {t("common.viewCategory")}
                 <i className='ph ph-arrow-right' />
               </Link>
             </div>
@@ -95,18 +87,13 @@ const FeaturesOne = () => {
                   alt=''
                 />
               </span>
-              <h4 className='mb-16 transition-1 item-hover__text'>
-                Mathematics &amp; Sciences
-              </h4>
-              <p className='transition-1 item-hover__text text-line-2'>
-                Core subjects for CSC and university entry. Physics, Math &amp;
-                more.
-              </p>
+              <h4 className='mb-16 transition-1 item-hover__text'>{t("features.stemTitle")}</h4>
+              <p className='transition-1 item-hover__text text-line-2'>{t("features.stemDesc")}</p>
               <Link
-                href='/course'
+                href={localizePath("/course")}
                 className='item-hover__text flex-align gap-8 text-main-600 mt-24 hover-text-decoration-underline transition-1'
               >
-                View Category
+                {t("common.viewCategory")}
                 <i className='ph ph-arrow-right' />
               </Link>
             </div>
@@ -120,18 +107,13 @@ const FeaturesOne = () => {
                   alt=''
                 />
               </span>
-              <h4 className='mb-16 transition-1 item-hover__text'>
-                IELTS &amp; TOEFL
-              </h4>
-              <p className='transition-1 item-hover__text text-line-2'>
-                Exam prep for study abroad and visas. Expert coaching &amp;
-                practice tests.
-              </p>
+              <h4 className='mb-16 transition-1 item-hover__text'>{t("features.englishTitle")}</h4>
+              <p className='transition-1 item-hover__text text-line-2'>{t("features.englishDesc")}</p>
               <Link
-                href='/course'
+                href={localizePath("/course")}
                 className='item-hover__text flex-align gap-8 text-main-600 mt-24 hover-text-decoration-underline transition-1'
               >
-                View Category
+                {t("common.viewCategory")}
                 <i className='ph ph-arrow-right' />
               </Link>
             </div>
@@ -145,18 +127,13 @@ const FeaturesOne = () => {
                   alt=''
                 />
               </span>
-              <h4 className='mb-16 transition-1 item-hover__text'>
-                Application Support
-              </h4>
-              <p className='transition-1 item-hover__text text-line-2'>
-                Document review, interview coaching &amp; timeline guidance for
-                admission.
-              </p>
+              <h4 className='mb-16 transition-1 item-hover__text'>{t("features.appTitle")}</h4>
+              <p className='transition-1 item-hover__text text-line-2'>{t("features.appDesc")}</p>
               <Link
-                href='/course'
+                href={localizePath("/course")}
                 className='item-hover__text flex-align gap-8 text-main-600 mt-24 hover-text-decoration-underline transition-1'
               >
-                View Category
+                {t("common.viewCategory")}
                 <i className='ph ph-arrow-right' />
               </Link>
             </div>

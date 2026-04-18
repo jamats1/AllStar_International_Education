@@ -1,6 +1,12 @@
-import Link from "next/link";
+"use client";
 
-const Breadcrumb = ({ title }) => {
+import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
+
+const Breadcrumb = ({ titleKey }) => {
+  const { t, localizePath } = useLocale();
+  const title = t(`breadcrumb.${titleKey}`);
+
   return (
     <section className='breadcrumb py-120 bg-main-25 position-relative z-1 overflow-hidden mb-0'>
       <img
@@ -38,17 +44,15 @@ const Breadcrumb = ({ title }) => {
           <div className='col-lg-8'>
             <div className='breadcrumb__wrapper'>
               <h1 className='breadcrumb__title display-4 fw-semibold text-center'>
-                {" "}
                 {title}
               </h1>
               <ul className='breadcrumb__list d-flex align-items-center justify-content-center gap-4'>
                 <li className='breadcrumb__item'>
                   <Link
-                    href='/'
+                    href={localizePath("/")}
                     className='breadcrumb__link text-neutral-500 hover-text-main-600 fw-medium'
                   >
-                    <i className='text-lg d-inline-flex ph-bold ph-house' />{" "}
-                    Home
+                    <i className='text-lg d-inline-flex ph-bold ph-house' /> {t("breadcrumb.home")}
                   </Link>
                 </li>
 

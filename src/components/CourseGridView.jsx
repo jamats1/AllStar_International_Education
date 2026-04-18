@@ -1,17 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const CourseGridView = () => {
+  const { t, localizePath } = useLocale();
   return (
     <section className='course-grid-view py-120'>
       <div className='container'>
         <div className='flex-between gap-16 flex-wrap mb-40'>
-          <span className='text-neutral-500'>Showing 9 Programs</span>
+          <span className='text-neutral-500'>{t("courseList.showing")}</span>
           <div className='flex-align gap-8'>
-            <span className='text-neutral-500 flex-shrink-0'>Sort By :</span>
+            <span className='text-neutral-500 flex-shrink-0'>{t("courseList.sortBy")}</span>
             <select className='form-select ps-20 pe-28 py-8 fw-semibold rounded-pill bg-main-25 border border-neutral-30 text-neutral-700'>
-              <option value={1}>Newest</option>
-              <option value={1}>Trending</option>
-              <option value={1}>Popular</option>
+              <option value={1}>{t("courseList.sortNewest")}</option>
+              <option value={1}>{t("courseList.sortTrending")}</option>
+              <option value={1}>{t("courseList.sortPopular")}</option>
             </select>
           </div>
         </div>
@@ -19,10 +23,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img1.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -42,8 +46,8 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
-                      HSK Level 4–5 Preparation
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
+                      {t("courses.hsk45")}
                     </Link>
                   </h4>
                   <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -52,7 +56,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -60,7 +64,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -78,7 +82,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img1.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -91,11 +95,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$148</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -105,10 +109,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img2.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -128,8 +132,8 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
-                      Mathematics for CSC Exam
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
+                          {t("courses.mathCsc")}
                     </Link>
                   </h4>
                   <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -138,7 +142,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -146,7 +150,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -164,7 +168,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img2.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -177,11 +181,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$499</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -191,10 +195,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img3.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -214,8 +218,8 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
-                      Physics for CSC Exam
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
+                          {t("courses.physicsCsc")}
                     </Link>
                   </h4>
                   <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -224,7 +228,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -232,7 +236,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -250,7 +254,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img3.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -263,11 +267,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$457</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -277,10 +281,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img4.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -300,8 +304,8 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
-                      CSC Mock Exam – Comprehensive
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
+                          {t("courses.mockCsc")}
                     </Link>
                   </h4>
                   <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -310,7 +314,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -318,7 +322,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -336,7 +340,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img4.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -349,11 +353,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$148</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -363,10 +367,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img5.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -386,8 +390,8 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
-                      IELTS Preparation for Study Abroad
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
+                          {t("courses.ieltsAbroad")}
                     </Link>
                   </h4>
                   <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -396,7 +400,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -404,7 +408,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -422,7 +426,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img5.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -435,11 +439,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$546</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -449,10 +453,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img6.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -472,8 +476,8 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
-                      TOEFL Preparation for Study Abroad
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
+                          {t("courses.toeflAbroad")}
                     </Link>
                   </h4>
                   <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -482,7 +486,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -490,7 +494,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -508,7 +512,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img6.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -521,11 +525,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$345</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -535,10 +539,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img7.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -558,7 +562,7 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
                       Application &amp; Interview Support
                     </Link>
                   </h4>
@@ -568,7 +572,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -576,7 +580,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -594,7 +598,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img2.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -607,11 +611,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$345</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -621,10 +625,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img9.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -644,7 +648,7 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
                       Scholarship Document Review
                     </Link>
                   </h4>
@@ -654,7 +658,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -662,7 +666,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -680,7 +684,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img3.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -693,11 +697,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$345</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -707,10 +711,10 @@ const CourseGridView = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='course-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/course-details' className='w-100 h-100'>
+                <Link href={localizePath('/course-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/course-img8.png'
-                    alt='Program'
+                    alt={t('common.program')}
                     className='course-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
@@ -730,7 +734,7 @@ const CourseGridView = () => {
               <div className='course-item__content'>
                 <div className=''>
                   <h4 className='mb-28'>
-                    <Link href='/course-details' className='link text-line-2'>
+                    <Link href={localizePath('/course-details')} className='link text-line-2'>
                       Study Abroad Application Roadmap
                     </Link>
                   </h4>
@@ -740,7 +744,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-video-camera' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Modules
+                        {t("courseCard.modules")}
                       </span>
                     </div>
                     <div className='flex-align gap-8'>
@@ -748,7 +752,7 @@ const CourseGridView = () => {
                         <i className='ph-bold ph-chart-bar' />
                       </span>
                       <span className='text-neutral-700 text-lg fw-medium'>
-                        Beginner
+                        {t("courseCard.beginner")}
                       </span>
                     </div>
                   </div>
@@ -766,7 +770,7 @@ const CourseGridView = () => {
                       <span className='text-neutral-700 text-2xl d-flex'>
                         <img
                           src='assets/images/thumbs/user-img1.png'
-                          alt='User Image'
+                          alt={t('common.userImageAlt')}
                           className='w-32 h-32 object-fit-cover rounded-circle'
                         />
                       </span>
@@ -779,11 +783,11 @@ const CourseGridView = () => {
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <h4 className='mb-0 text-main-two-600'>$345</h4>
                   <Link
-                    href='/apply-admission'
+                    href={localizePath('/apply-admission')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Enroll Now
+                        {t("common.enrollNow")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>

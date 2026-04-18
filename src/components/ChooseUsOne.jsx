@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
+import { useLocale } from "@/context/LocaleContext";
 
 const ChooseUsOne = () => {
+  const { t, localizePath } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className='choose-us pt-120 position-relative z-1 mash-bg-main mash-bg-main-two'>
@@ -24,15 +26,10 @@ const ChooseUsOne = () => {
               <div className='mb-40'>
                 <div className='flex-align gap-8 mb-16 wow bounceInDown'>
                   <span className='w-8 h-8 bg-main-600 rounded-circle' />
-                  <h5 className='text-main-600 mb-0'>Why Choose AllStar</h5>
+                  <h5 className='text-main-600 mb-0'>{t("chooseUs.kicker")}</h5>
                 </div>
-                <h2 className='mb-24  wow bounceIn'>
-                  Scholarship Success &amp; Global Admission.
-                </h2>
-                <p className='text-neutral-500 text-line-2  wow bounceInUp'>
-                  AllStar prepares students for CSC and study abroad. Expert
-                  instructors, mock exams, and application support.
-                </p>
+                <h2 className='mb-24  wow bounceIn'>{t("chooseUs.heading")}</h2>
+                <p className='text-neutral-500 text-line-2  wow bounceInUp'>{t("chooseUs.sub")}</p>
               </div>
               <ul>
                 <li
@@ -43,9 +40,7 @@ const ChooseUsOne = () => {
                   <span className='flex-shrink-0 text-xl text-main-600 d-flex'>
                     <i className='ph-bold ph-checks' />
                   </span>
-                  <span className='flex-grow-1 text-neutral-500'>
-                    Proven scholarship success rate
-                  </span>
+                  <span className='flex-grow-1 text-neutral-500'>{t("chooseUs.bullet1")}</span>
                 </li>
                 <li
                   className='flex-align gap-12 mb-16'
@@ -55,9 +50,7 @@ const ChooseUsOne = () => {
                   <span className='flex-shrink-0 text-xl text-main-600 d-flex'>
                     <i className='ph-bold ph-checks' />
                   </span>
-                  <span className='flex-grow-1 text-neutral-500'>
-                    Expert-led mock exams
-                  </span>
+                  <span className='flex-grow-1 text-neutral-500'>{t("chooseUs.bullet2")}</span>
                 </li>
                 <li
                   className='flex-align gap-12 mb-16'
@@ -67,17 +60,15 @@ const ChooseUsOne = () => {
                   <span className='flex-shrink-0 text-xl text-main-600 d-flex'>
                     <i className='ph-bold ph-checks' />
                   </span>
-                  <span className='flex-grow-1 text-neutral-500'>
-                    Application &amp; interview support
-                  </span>
+                  <span className='flex-grow-1 text-neutral-500'>{t("chooseUs.bullet3")}</span>
                 </li>
               </ul>
               <div className='pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                 <Link
-                  href='/about'
+                  href={localizePath("/about")}
                   className='btn btn-main rounded-pill flex-align d-inline-flex gap-8'
                 >
-                  Read More
+                  {t("common.readMore")}
                   <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                 </Link>
               </div>
@@ -94,14 +85,14 @@ const ChooseUsOne = () => {
                     4.6
                     <span className='text-neutral-100'>(2.4k)</span>
                   </span>
-                  <span className='text-neutral-500'>AVG Reviews</span>
+                  <span className='text-neutral-500'>{t("chooseUs.reviewsLabel")}</span>
                 </div>
               </div>
               <div
                 className='banner-box one style-two px-24 py-12 rounded-12 bg-white fw-medium box-shadow-lg d-inline-block'
                 data-aos='fade-left'
               >
-                <span className='text-main-600'>36k+</span> Enrolled Students
+                <span className='text-main-600'>36k+</span> {t("chooseUs.enrolledLine")}
                 <div className='enrolled-students mt-12'>
                   <img
                     src='assets/images/thumbs/enroll-student-img1.png'

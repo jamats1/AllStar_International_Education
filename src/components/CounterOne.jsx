@@ -1,7 +1,10 @@
 "use client";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { useLocale } from "@/context/LocaleContext";
+
 const CounterOne = () => {
+  const { t } = useLocale();
   return (
     <section className='counter py-120'>
       <div className='container'>
@@ -23,9 +26,7 @@ const CounterOne = () => {
                   </h2>
                 )}
               </VisibilitySensor>
-              <span className='text-neutral-500 text-lg'>
-                Students Placed
-              </span>
+              <span className='text-neutral-500 text-lg'>{t("counter.studentsPlaced")}</span>
             </div>
           </div>
           <div
@@ -44,9 +45,7 @@ const CounterOne = () => {
                   </h2>
                 )}
               </VisibilitySensor>
-              <span className='text-neutral-500 text-lg'>
-                Scholarships Won
-              </span>
+              <span className='text-neutral-500 text-lg'>{t("counter.scholarshipsWon")}</span>
             </div>
           </div>
           <div
@@ -65,9 +64,7 @@ const CounterOne = () => {
                   </h2>
                 )}
               </VisibilitySensor>
-              <span className='text-neutral-500 text-lg'>
-                Success Rate
-              </span>
+              <span className='text-neutral-500 text-lg'>{t("counter.successRate")}</span>
             </div>
           </div>
           <div
@@ -86,9 +83,7 @@ const CounterOne = () => {
                   </h2>
                 )}
               </VisibilitySensor>
-              <span className='text-neutral-500 text-lg'>
-                Years Experience
-              </span>
+              <span className='text-neutral-500 text-lg'>{t("counter.yearsExperience")}</span>
             </div>
           </div>
         </div>

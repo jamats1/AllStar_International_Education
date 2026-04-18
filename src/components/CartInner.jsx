@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useLocale } from "@/context/LocaleContext";
 
 export const CartCount = () => {
   let [count, setCount] = useState(1);
@@ -33,6 +34,7 @@ export const CartCount = () => {
 };
 
 const CartInner = () => {
+  const { t, localizePath } = useLocale();
   return (
     <div className='py-120'>
       <div className='container'>
@@ -40,8 +42,8 @@ const CartInner = () => {
           <div className='col-lg-8'>
             <div className='border border-neutral-30 rounded-12 bg-main-25 p-32 bg-main-25'>
               <h4 className='mb-0'>
-                Cart{" "}
-                <span className='text-neutral-100 fw-normal'>(4 item)</span>{" "}
+                {t("cart.title")}{" "}
+                <span className='text-neutral-100 fw-normal'>{t("cart.itemsInCart")}</span>{" "}
               </h4>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='table-responsive overflow-x-auto'>
@@ -49,16 +51,16 @@ const CartInner = () => {
                   <thead>
                     <tr>
                       <th className='text-neutral-500 fw-semibold px-24 py-20 border-0'>
-                        Product
+                        {t("cart.colProduct")}
                       </th>
                       <th className='text-neutral-500 fw-semibold px-24 py-20 border-0'>
-                        Price
+                        {t("cart.colPrice")}
                       </th>
                       <th className='text-neutral-500 fw-semibold px-24 py-20 border-0'>
-                        Quantity
+                        {t("cart.colQuantity")}
                       </th>
                       <th className='text-neutral-500 fw-semibold px-24 py-20 border-0'>
-                        Total Price
+                        {t("cart.colTotal")}
                       </th>
                       <th className='text-neutral-500 fw-semibold px-24 py-20 border-0' />
                     </tr>
@@ -75,12 +77,12 @@ const CartInner = () => {
                           </div>
                           <div className=''>
                             <h6 className='text-md mb-12 text-line-1'>
-                              Chuck 70 Hi Sneaker
+                              {t("cart.products.chuck")}
                             </h6>
                             <div className='d-flex align-items-center gap-16'>
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Size:
+                                  {t("cart.size")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   9
@@ -89,7 +91,7 @@ const CartInner = () => {
                               <span className='h-20 border border-neutral-40 border-dashed' />
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Color:
+                                  {t("cart.color")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   <span className='w-12 h-12 rounded-circle bg-pen' />
@@ -105,7 +107,7 @@ const CartInner = () => {
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
                         <span className='text-neutral-100 mt-8 text-xs'>
-                          Available: 72
+                          {t("cart.available")} 72
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
@@ -128,12 +130,12 @@ const CartInner = () => {
                           </div>
                           <div className=''>
                             <h6 className='text-md mb-12 text-line-1'>
-                              Cotu Classic Sneaker
+                              {t("cart.products.cotu")}
                             </h6>
                             <div className='d-flex align-items-center gap-16'>
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Size:
+                                  {t("cart.size")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   9
@@ -142,7 +144,7 @@ const CartInner = () => {
                               <span className='h-20 border border-neutral-40 border-dashed' />
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Color:
+                                  {t("cart.color")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   <span className='w-12 h-12 rounded-circle bg-watch' />
@@ -158,7 +160,7 @@ const CartInner = () => {
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
                         <span className='text-neutral-100 mt-8 text-xs'>
-                          Available: 72
+                          {t("cart.available")} 72
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
@@ -181,12 +183,12 @@ const CartInner = () => {
                           </div>
                           <div className=''>
                             <h6 className='text-md mb-12 text-line-1'>
-                              Zoom Freak 2
+                              {t("cart.products.zoom")}
                             </h6>
                             <div className='d-flex align-items-center gap-16'>
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Size:
+                                  {t("cart.size")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   9
@@ -195,7 +197,7 @@ const CartInner = () => {
                               <span className='h-20 border border-neutral-40 border-dashed' />
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Color:
+                                  {t("cart.color")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   <span className='w-12 h-12 rounded-circle bg-black' />
@@ -211,7 +213,7 @@ const CartInner = () => {
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
                         <span className='text-neutral-100 mt-8 text-xs'>
-                          Available: 72
+                          {t("cart.available")} 72
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
@@ -234,12 +236,12 @@ const CartInner = () => {
                           </div>
                           <div className=''>
                             <h6 className='text-md mb-12 text-line-1'>
-                              Classic Sneaker
+                              {t("cart.products.classic")}
                             </h6>
                             <div className='d-flex align-items-center gap-16'>
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Size:
+                                  {t("cart.size")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   9
@@ -248,7 +250,7 @@ const CartInner = () => {
                               <span className='h-20 border border-neutral-40 border-dashed' />
                               <div className='d-flex align-items-center gap-4'>
                                 <span className='text-xs text-neutral-500'>
-                                  Color:
+                                  {t("cart.color")}
                                 </span>
                                 <span className='w-20 h-20 border border-neutral-40 bg-white rounded-4 d-flex justify-content-center align-items-center text-sm text-neutral-500'>
                                   <span className='w-12 h-12 rounded-circle bg-table' />
@@ -264,7 +266,7 @@ const CartInner = () => {
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
                         <CartCount />
                         <span className='text-neutral-100 mt-8 text-xs'>
-                          Available: 72
+                          {t("cart.available")} 72
                         </span>
                       </td>
                       <td className='border-bottom border-dashed border-neutral-40 text-neutral-500 bg-transparent px-24 py-20'>
@@ -279,25 +281,25 @@ const CartInner = () => {
                   </tbody>
                 </table>
                 <Link
-                  href='/apply-admission'
+                  href={localizePath('/apply-admission')}
                   className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold mt-24'
                   tabIndex={0}
                 >
                   <i className='ph ph-arrow-left' />
-                  Continue Shopping
+                  {t("cart.continueShopping")}
                 </Link>
               </div>
             </div>
           </div>
           <div className='col-lg-4'>
             <div className='border border-neutral-30 rounded-12 bg-main-25 p-24 bg-main-25'>
-              <span className='text-neutral-700 text-lg mb-12'>Price</span>
+              <span className='text-neutral-700 text-lg mb-12'>{t("orderSummary.price")}</span>
               <div className='flex-align align-items-start flex-wrap gap-8'>
                 <div className='flex-align gap-12 text-neutral-700'>
                   <span className='text-2xl d-flex'>
                     <i className='ph-bold ph-tag' />
                   </span>
-                  <span className=''>From</span>
+                  <span className=''>{t("orderSummary.from")}</span>
                   <h2 className='mb-0'>$99.99</h2>
                 </div>
                 <button
@@ -305,7 +307,7 @@ const CartInner = () => {
                   className='text-neutral-500 text-sm'
                   data-bs-toggle='tooltip'
                   data-bs-placement='top'
-                  data-bs-title='Initial Price'
+                  data-bs-title={t("orderSummary.initialPriceTooltip")}
                 >
                   <i className='ph-bold ph-info' />
                 </button>
@@ -313,16 +315,16 @@ const CartInner = () => {
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='d-flex flex-column gap-24'>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
-                  <span className='text-neutral-500'>Base Price</span>
+                  <span className='text-neutral-500'>{t("orderSummary.basePrice")}</span>
                   <span className='text-neutral-700 fw-medium'>$39.99</span>
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
-                  <span className='text-neutral-500'>State Tax</span>
+                  <span className='text-neutral-500'>{t("orderSummary.stateTax")}</span>
                   <span className='text-neutral-700 fw-medium'>$5</span>
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
-                  <span className='text-neutral-500'>Shipping</span>
-                  <span className='text-neutral-700 fw-medium'>Free</span>
+                  <span className='text-neutral-500'>{t("orderSummary.shipping")}</span>
+                  <span className='text-neutral-700 fw-medium'>{t("orderSummary.free")}</span>
                 </div>
               </div>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
@@ -330,7 +332,7 @@ const CartInner = () => {
                 <input
                   type='email'
                   className='form-control bg-white shadow-none border border-neutral-30 rounded-pill h-48 ps-24 pe-44 focus-border-main-600'
-                  placeholder='DISCOUNT9'
+                  placeholder={t("cart.discountPlaceholder")}
                 />
                 <button
                   type='submit'
@@ -340,20 +342,20 @@ const CartInner = () => {
                 </button>
               </form>
               <div className='d-flex align-items-center justify-content-between gap-4'>
-                <span className='text-neutral-500'>Discount</span>
+                <span className='text-neutral-500'>{t("orderSummary.discount")}</span>
                 <span className='text-main-two-600 fw-medium'>-$9</span>
               </div>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='d-flex align-items-center justify-content-between gap-4'>
-                <span className='text-neutral-500'>Total</span>
+                <span className='text-neutral-500'>{t("orderSummary.total")}</span>
                 <span className='text-main-600 fw-medium'>$35.99</span>
               </div>
               <span className='d-block border border-neutral-30 mt-24 border-dashed' />
               <Link
-                href='/checkout'
+                href={localizePath('/checkout')}
                 className='btn btn-main rounded-pill w-100 mt-40'
               >
-                Check Out
+                {t("orderSummary.checkout")}
               </Link>
             </div>
           </div>

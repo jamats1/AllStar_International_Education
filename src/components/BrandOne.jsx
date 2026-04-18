@@ -1,7 +1,9 @@
 "use client";
 import Slider from "react-slick";
+import { useLocale } from "@/context/LocaleContext";
 
 const BrandOne = () => {
+  const { t } = useLocale();
   const settings = {
     slidesToShow: 7,
     slidesToScroll: 1,
@@ -43,9 +45,7 @@ const BrandOne = () => {
     >
       <div className='container container--lg'>
         <div className='brand-box py-80 px-16 bg-main-25 border border-neutral-30 rounded-16'>
-          <h5 className='mb-40 text-center text-neutral-500'>
-            TRUSTED BY STUDENTS &amp; FAMILIES WORLDWIDE
-          </h5>
+          <h5 className='mb-40 text-center text-neutral-500'>{t("brand.trusted")}</h5>
           <div className='container'>
             <Slider {...settings} className='brand-slider'>
               <div className='brand-slider__item px-24'>

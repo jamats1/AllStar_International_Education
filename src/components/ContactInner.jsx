@@ -1,4 +1,10 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+
 const ContactInner = () => {
+  const { t } = useLocale();
+
   return (
     <>
       <section className='contact py-120'>
@@ -8,13 +14,10 @@ const ContactInner = () => {
               <span className='text-main-600 text-2xl d-flex'>
                 <i className='ph-bold ph-book' />
               </span>
-              <h5 className='text-main-600 mb-0'>Get In Touch</h5>
+              <h5 className='text-main-600 mb-0'>{t("contactPage.sectionKicker")}</h5>
             </div>
-            <h2 className='mb-24'>Let us help you</h2>
-            <p className=''>
-              Our platform is built on the principles of innovation, quality,
-              and inclusivity, aiming to provide a seamless learning
-            </p>
+            <h2 className='mb-24'>{t("contactPage.heading")}</h2>
+            <p className=''>{t("contactPage.lead")}</p>
           </div>
           <div className='row gy-4'>
             <div className='col-xl-4 col-md-6'>
@@ -23,15 +26,13 @@ const ContactInner = () => {
                   <i className='ph ph-map-pin-line' />
                 </span>
                 <div className='flex-grow-1'>
-                  <h4 className='mb-12'>Main Office</h4>
-                  <p className='text-neutral-500'>
-                    2972 Westheimer Rd. Santa Ana, Illinois 85486{" "}
-                  </p>
+                  <h4 className='mb-12'>{t("contactPage.mainOffice")}</h4>
+                  <p className='text-neutral-500'>{t("contactPage.officeAddress")}</p>
                   <a
                     href='#'
                     className='text-main-600 fw-semibold text-decoration-underline mt-16'
                   >
-                    Find Location
+                    {t("contactPage.findLocation")}
                   </a>
                 </div>
               </div>
@@ -42,14 +43,14 @@ const ContactInner = () => {
                   <i className='ph ph-envelope-open' />
                 </span>
                 <div className='flex-grow-1'>
-                  <h4 className='mb-12'>Email Address</h4>
-                  <p className='text-neutral-500'>infoexample@gmail.com</p>
-                  <p className='text-neutral-500'>example@gmail.com</p>
+                  <h4 className='mb-12'>{t("contactPage.emailTitle")}</h4>
+                  <p className='text-neutral-500'>allstaredu@gmail.com</p>
+                  <p className='text-neutral-500'>info@allstar.edu</p>
                   <a
-                    href='mailto:infoexample@gmail.com'
+                    href='mailto:allstaredu@gmail.com'
                     className='text-main-600 fw-semibold text-decoration-underline mt-16'
                   >
-                    Get In Touch
+                    {t("contactPage.emailAction")}
                   </a>
                 </div>
               </div>
@@ -60,14 +61,14 @@ const ContactInner = () => {
                   <i className='ph ph-phone-call' />
                 </span>
                 <div className='flex-grow-1'>
-                  <h4 className='mb-12'>Phone Number</h4>
-                  <p className='text-neutral-500'>(505) 555-0125</p>
-                  <p className='text-neutral-500'>(406) 555-0120</p>
+                  <h4 className='mb-12'>{t("contactPage.phoneTitle")}</h4>
+                  <p className='text-neutral-500'>(207) 555-0119</p>
+                  <p className='text-neutral-500'>(704) 555-0127</p>
                   <a
-                    href='tel:(406)555-0120'
+                    href='tel:+17045550127'
                     className='text-main-600 fw-semibold text-decoration-underline mt-16'
                   >
-                    Contact Us Today!
+                    {t("contactPage.phoneAction")}
                   </a>
                 </div>
               </div>
@@ -89,17 +90,10 @@ const ContactInner = () => {
                   <span className='text-main-600 text-2xl d-flex'>
                     <i className='ph-bold ph-book' />
                   </span>
-                  <h5 className='text-main-600 mb-0'>Contact Us</h5>
+                  <h5 className='text-main-600 mb-0'>{t("contactPage.formKicker")}</h5>
                 </div>
-                <h2 className='mb-24'>
-                  Have questions? don't hesitate to contact us
-                </h2>
-                <p className='text-neutral-500 text-line-3 max-w-636'>
-                  We are passionate about transforming lives through education.
-                  Founded with a vision to make learning accessible to all, we
-                  believe in the power of knowledge to unlock opportunities and
-                  shape the future.
-                </p>
+                <h2 className='mb-24'>{t("contactPage.formHeading")}</h2>
+                <p className='text-neutral-500 text-line-3 max-w-636'>{t("contactPage.formLead")}</p>
               </div>
               <div className='flex-align gap-40 flex-wrap'>
                 <div className='enrolled-students mt-12 d-block'>
@@ -152,10 +146,7 @@ const ContactInner = () => {
                       <i className='ph-fill ph-star-half' />
                     </li>
                   </ul>
-                  <span className='text-neutral-700 fw-medium'>
-                    {" "}
-                    2.5k+ reviews (4.95 of 5)
-                  </span>
+                  <span className='text-neutral-700 fw-medium'> {t("contactPage.reviews")}</span>
                 </div>
               </div>
             </div>
@@ -163,20 +154,20 @@ const ContactInner = () => {
               <div className='p-24 bg-white rounded-12 box-shadow-md'>
                 <div className='border border-neutral-30 rounded-8 bg-main-25 p-24'>
                   <form action='#' id='commentForm'>
-                    <h4 className='mb-0'>Get In Touch</h4>
+                    <h4 className='mb-0'>{t("contactPage.formTitle")}</h4>
                     <span className='d-block border border-neutral-30 my-24 border-dashed' />
                     <div className='mb-24'>
                       <label
                         htmlFor='name'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Name{" "}
+                        {t("contactPage.labelName")}
                       </label>
                       <input
                         type='text'
                         className='common-input rounded-pill border-transparent focus-border-main-600'
                         id='name'
-                        placeholder='Enter Name...'
+                        placeholder={t("contactPage.phName")}
                       />
                     </div>
                     <div className='mb-24'>
@@ -184,13 +175,13 @@ const ContactInner = () => {
                         htmlFor='email'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Email{" "}
+                        {t("contactPage.labelEmail")}
                       </label>
                       <input
                         type='email'
                         className='common-input rounded-pill border-transparent focus-border-main-600'
                         id='email'
-                        placeholder='Enter Email...'
+                        placeholder={t("contactPage.phEmail")}
                       />
                     </div>
                     <div className='mb-24'>
@@ -198,13 +189,13 @@ const ContactInner = () => {
                         htmlFor='phone'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Phone{" "}
+                        {t("contactPage.labelPhone")}
                       </label>
                       <input
                         type='tel'
                         className='common-input rounded-pill border-transparent focus-border-main-600'
                         id='phone'
-                        placeholder='Enter Your Number...'
+                        placeholder={t("contactPage.phPhone")}
                       />
                     </div>
                     <div className='mb-24'>
@@ -212,12 +203,12 @@ const ContactInner = () => {
                         htmlFor='desc'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Message
+                        {t("contactPage.labelMessage")}
                       </label>
                       <textarea
                         id='desc'
                         className='common-input rounded-24 border-transparent focus-border-main-600 h-110'
-                        placeholder='Enter Your Message...'
+                        placeholder={t("contactPage.phMessage")}
                         defaultValue={""}
                       />
                     </div>
@@ -226,7 +217,7 @@ const ContactInner = () => {
                         type='submit'
                         className='btn btn-main rounded-pill flex-center gap-8 mt-40'
                       >
-                        Send Message
+                        {t("contactPage.submit")}
                         <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                       </button>
                     </div>

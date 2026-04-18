@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { useRef } from "react";
 import Slider from "react-slick";
+import { useLocale } from "@/context/LocaleContext";
 
 const InstructorOne = () => {
+  const { t, localizePath } = useLocale();
   const instructorSliderRef = useRef(null);
   const settings = {
     slidesToShow: 3,
@@ -54,11 +56,8 @@ const InstructorOne = () => {
       />
       <div className='container'>
         <div className='section-heading text-center'>
-          <h2 className='mb-24 wow bounceIn'>Course Instructors</h2>
-          <p className=' wow bounceInUp'>
-            Join us on this journey of discovery, growth, and transformation.
-            Together, let's shape a brighter future
-          </p>
+          <h2 className='mb-24 wow bounceIn'>{t("instructor.heading")}</h2>
+          <p className=' wow bounceInUp'>{t("instructor.sub")}</p>
         </div>
         <Slider
           {...settings}
@@ -72,7 +71,7 @@ const InstructorOne = () => {
           >
             <div className='rounded-12 overflow-hidden position-relative bg-dark-yellow'>
               <Link
-                href='/instructor-details'
+                href={localizePath('/instructor-details')}
                 className='w-100 h-100 d-flex align-items-end'
               >
                 <img
@@ -116,7 +115,7 @@ const InstructorOne = () => {
               </div>
               <div className=''>
                 <h4 className='mb-28 pb-24 border-bottom border-neutral-50 mb-24 border-dashed border-0'>
-                  <Link href='/instructor-details' className='link text-line-2'>
+                  <Link href={localizePath('/instructor-details')} className='link text-line-2'>
                     Devon Lane
                   </Link>
                 </h4>
@@ -126,7 +125,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-lightbulb' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      Web Developer
+                      {t("instructor.roles.devon")}
                     </span>
                   </div>
                   <div className='flex-align gap-8'>
@@ -134,7 +133,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-watch' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      7 Course
+                      7 {t("instructor.courseWord")}
                     </span>
                   </div>
                 </div>
@@ -144,7 +143,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-users' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      15k Students
+                      15k {t("instructor.studentsWord")}
                     </span>
                   </div>
                   <div className='flex-align gap-4'>
@@ -160,11 +159,11 @@ const InstructorOne = () => {
               </div>
               <div className='pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                 <Link
-                  href='/instructor-details'
+                  href={localizePath('/instructor-details')}
                   className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                   tabIndex={0}
                 >
-                  View Profile
+                  {t("instructor.viewProfile")}
                   <i className='ph ph-arrow-right' />
                 </Link>
               </div>
@@ -177,7 +176,7 @@ const InstructorOne = () => {
           >
             <div className='rounded-12 overflow-hidden position-relative bg-dark-yellow'>
               <Link
-                href='/instructor-details'
+                href={localizePath('/instructor-details')}
                 className='w-100 h-100 d-flex align-items-end'
               >
                 <img
@@ -221,7 +220,7 @@ const InstructorOne = () => {
               </div>
               <div className=''>
                 <h4 className='mb-28 pb-24 border-bottom border-neutral-50 mb-24 border-dashed border-0'>
-                  <Link href='/instructor-details' className='link text-line-2'>
+                  <Link href={localizePath('/instructor-details')} className='link text-line-2'>
                     John Doe
                   </Link>
                 </h4>
@@ -231,7 +230,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-lightbulb' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      WordPress Expert
+                      {t("instructor.roles.john")}
                     </span>
                   </div>
                   <div className='flex-align gap-8'>
@@ -239,7 +238,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-watch' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      6 Course
+                      6 {t("instructor.courseWord")}
                     </span>
                   </div>
                 </div>
@@ -249,7 +248,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-users' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      55k Students
+                      55k {t("instructor.studentsWord")}
                     </span>
                   </div>
                   <div className='flex-align gap-4'>
@@ -265,11 +264,11 @@ const InstructorOne = () => {
               </div>
               <div className='pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                 <Link
-                  href='/instructor-details'
+                  href={localizePath('/instructor-details')}
                   className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                   tabIndex={0}
                 >
-                  View Profile
+                  {t("instructor.viewProfile")}
                   <i className='ph ph-arrow-right' />
                 </Link>
               </div>
@@ -282,7 +281,7 @@ const InstructorOne = () => {
           >
             <div className='rounded-12 overflow-hidden position-relative bg-dark-yellow'>
               <Link
-                href='/instructor-details'
+                href={localizePath('/instructor-details')}
                 className='w-100 h-100 d-flex align-items-end'
               >
                 <img
@@ -326,7 +325,7 @@ const InstructorOne = () => {
               </div>
               <div className=''>
                 <h4 className='mb-28 pb-24 border-bottom border-neutral-50 mb-24 border-dashed border-0'>
-                  <Link href='/instructor-details' className='link text-line-2'>
+                  <Link href={localizePath('/instructor-details')} className='link text-line-2'>
                     Alexandar
                   </Link>
                 </h4>
@@ -336,7 +335,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-lightbulb' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      UI/UX Designer
+                      {t("instructor.roles.alex")}
                     </span>
                   </div>
                   <div className='flex-align gap-8'>
@@ -344,7 +343,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-watch' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      12 Course
+                      12 {t("instructor.courseWord")}
                     </span>
                   </div>
                 </div>
@@ -354,7 +353,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-users' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      36k Students
+                      36k {t("instructor.studentsWord")}
                     </span>
                   </div>
                   <div className='flex-align gap-4'>
@@ -370,11 +369,11 @@ const InstructorOne = () => {
               </div>
               <div className='pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                 <Link
-                  href='/instructor-details'
+                  href={localizePath('/instructor-details')}
                   className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                   tabIndex={0}
                 >
-                  View Profile
+                  {t("instructor.viewProfile")}
                   <i className='ph ph-arrow-right' />
                 </Link>
               </div>
@@ -387,7 +386,7 @@ const InstructorOne = () => {
           >
             <div className='rounded-12 overflow-hidden position-relative bg-dark-yellow'>
               <Link
-                href='/instructor-details'
+                href={localizePath('/instructor-details')}
                 className='w-100 h-100 d-flex align-items-end'
               >
                 <img
@@ -431,7 +430,7 @@ const InstructorOne = () => {
               </div>
               <div className=''>
                 <h4 className='mb-28 pb-24 border-bottom border-neutral-50 mb-24 border-dashed border-0'>
-                  <Link href='/instructor-details' className='link text-line-2'>
+                  <Link href={localizePath('/instructor-details')} className='link text-line-2'>
                     John Doe
                   </Link>
                 </h4>
@@ -441,7 +440,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-lightbulb' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      WordPress Expert
+                      {t("instructor.roles.coach")}
                     </span>
                   </div>
                   <div className='flex-align gap-8'>
@@ -449,7 +448,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-watch' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      6 Course
+                      6 {t("instructor.courseWord")}
                     </span>
                   </div>
                 </div>
@@ -459,7 +458,7 @@ const InstructorOne = () => {
                       <i className='ph-bold ph-users' />
                     </span>
                     <span className='text-neutral-700 text-lg fw-medium'>
-                      55k Students
+                      55k {t("instructor.studentsWord")}
                     </span>
                   </div>
                   <div className='flex-align gap-4'>
@@ -475,11 +474,11 @@ const InstructorOne = () => {
               </div>
               <div className='pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                 <Link
-                  href='/instructor-details'
+                  href={localizePath('/instructor-details')}
                   className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                   tabIndex={0}
                 >
-                  View Profile
+                  {t("instructor.viewProfile")}
                   <i className='ph ph-arrow-right' />
                 </Link>
               </div>

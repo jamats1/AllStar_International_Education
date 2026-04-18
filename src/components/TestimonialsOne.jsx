@@ -1,7 +1,9 @@
 "use client";
 import { useEffect } from "react";
+import { useLocale } from "@/context/LocaleContext";
 
 const TestimonialsOne = () => {
+  const { t } = useLocale();
   useEffect(() => {
     const loadSlick = async () => {
       if (typeof window !== "undefined") {
@@ -100,14 +102,10 @@ const TestimonialsOne = () => {
               <div className='section-heading style-left'>
                 <div className='flex-align gap-8 mb-16 wow bounceInDown'>
                   <span className='w-8 h-8 bg-main-600 rounded-circle' />
-                  <h5 className='text-main-600 mb-0'>What Our Students Say</h5>
+                  <h5 className='text-main-600 mb-0'>{t("testimonials.kicker")}</h5>
                 </div>
-                <h2 className='mb-24 wow bounceIn'>
-                  What Students &amp; Parents Say About AllStar
-                </h2>
-                <p className='text-neutral-500 text-line-2 wow bounceInUp'>
-                  Students placed in top universities worldwide
-                </p>
+                <h2 className='mb-24 wow bounceIn'>{t("testimonials.heading")}</h2>
+                <p className='text-neutral-500 text-line-2 wow bounceInUp'>{t("testimonials.sub")}</p>
               </div>
               <div className='testimonials__slider'>
                 <div className='testimonials-item'>
@@ -137,14 +135,13 @@ const TestimonialsOne = () => {
                     data-aos='fade-left'
                     data-aos-duration={1200}
                   >
-                    "AllStar's CSC prep was the key to my scholarship. Mock
-                    exams and support got me ready. Now studying in China.”
+                    {t("testimonials.quote1")}
                   </p>
                   <h4 className='mt-48 mb-8' data-aos='fade-left'>
-                    Kathryn Murphy
+                    {t("testimonials.name1")}
                   </h4>
                   <span className='text-neutral-700' data-aos='fade-left'>
-                    CSC Scholar
+                    {t("testimonials.role1")}
                   </span>
                 </div>
                 <div className='testimonials-item'>
@@ -174,14 +171,13 @@ const TestimonialsOne = () => {
                     data-aos='fade-left'
                     data-aos-duration={1200}
                   >
-                    "The IELTS prep and application support made the difference.
-                    I'm now at my dream university abroad. Thank you, AllStar."
+                    {t("testimonials.quote2")}
                   </p>
                   <h4 className='mt-48 mb-8' data-aos='fade-left'>
-                    John Doe
+                    {t("testimonials.name2")}
                   </h4>
                   <span className='text-neutral-700' data-aos='fade-left'>
-                    Study Abroad Scholar
+                    {t("testimonials.role2")}
                   </span>
                 </div>
               </div>

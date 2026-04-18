@@ -1,18 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const BlogGridInner = () => {
+  const { t, localizePath } = useLocale();
   return (
     <div className='blog-page-section py-120'>
       <div className='container'>
         <div className='flex-between gap-16 flex-wrap mb-40'>
-          <span className='text-neutral-500'>AllStar Articles</span>
+          <span className='text-neutral-500'>{t("blogGrid.pageTitle")}</span>
           <div className='flex-align gap-16'>
             <div className='flex-align gap-8'>
-              <span className='text-neutral-500 flex-shrink-0'>Sort By :</span>
+              <span className='text-neutral-500 flex-shrink-0'>{t("blogGrid.sortBy")}</span>
               <select className='form-select ps-20 pe-28 py-8 fw-medium rounded-pill bg-main-25 border border-neutral-30 text-neutral-700'>
-                <option value={1}>Newest</option>
-                <option value={1}>Trending</option>
-                <option value={1}>Popular</option>
+                <option value={1}>{t("blogGrid.sortNewest")}</option>
+                <option value={1}>{t("blogGrid.sortTrending")}</option>
+                <option value={1}>{t("blogGrid.sortPopular")}</option>
               </select>
             </div>
             <button
@@ -27,22 +31,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img1.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    CSC Exam Dates &amp; Preparation Guide
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t1")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -50,7 +54,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -69,11 +73,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -83,22 +87,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img2.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    The Importance of Diversity in Higher Education
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t2")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -106,7 +110,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -125,11 +129,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -139,22 +143,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img3.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    10 Tips for Successful Online Learning
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t3")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -162,7 +166,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -181,11 +185,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -195,22 +199,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img4.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    How to Stay Motivated While Studying from Home
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t4")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -218,7 +222,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -237,11 +241,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -251,22 +255,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img5.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    Mastering Python: Beginner to Advanced Tips
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t5")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -274,7 +278,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -293,11 +297,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -307,22 +311,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img6.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    Balancing Work and Study: Strategies for Success
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t6")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -330,7 +334,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -349,11 +353,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -363,22 +367,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img7.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    The Importance of Lifelong Learning in Today's World
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t7")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -386,7 +390,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -405,11 +409,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -419,22 +423,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img8.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    Effective Time Management for Students
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t8")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -442,7 +446,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -461,11 +465,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>
@@ -475,22 +479,22 @@ const BlogGridInner = () => {
           <div className='col-lg-4 col-sm-6'>
             <div className='scale-hover-item bg-main-25 rounded-16 p-12 h-100 border border-neutral-30'>
               <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                <Link href='/blog-details' className='w-100 h-100'>
+                <Link href={localizePath('/blog-details')} className='w-100 h-100'>
                   <img
                     src='assets/images/thumbs/blog-two-img9.png'
-                    alt='AllStar Article'
+                    alt={t("blog.articleAlt")}
                     className='scale-hover-item__img rounded-12 cover-img transition-2'
                   />
                 </Link>
                 <div className='position-absolute inset-inline-end-0 inset-block-end-0 me-16 mb-16 py-12 px-24 rounded-8 bg-main-three-600 text-white fw-medium'>
                   <h3 className='mb-0 text-white fw-medium'>21</h3>
-                  DEC
+                  {t("blogGrid.dec")}
                 </div>
               </div>
               <div className='pt-32 pb-24 px-16 position-relative'>
                 <h4 className='mb-28'>
-                  <Link href='/blog-details' className='link text-line-2'>
-                    The Benefits of Learning a New Language Online
+                  <Link href={localizePath('/blog-details')} className='link text-line-2'>
+                    {t("blogGrid.titles.t9")}
                   </Link>
                 </h4>
                 <div className='flex-align gap-14 flex-wrap my-20'>
@@ -498,7 +502,7 @@ const BlogGridInner = () => {
                     <span className='text-neutral-500 text-2xl d-flex'>
                       <i className='ph ph-user-circle' />
                     </span>
-                    <span className='text-neutral-500 text-lg'>By Admin</span>
+                    <span className='text-neutral-500 text-lg'>{t("blogGrid.byAdmin")}</span>
                   </div>
                   <span className='w-8 h-8 bg-neutral-100 rounded-circle' />
                   <div className='flex-align gap-8'>
@@ -517,11 +521,11 @@ const BlogGridInner = () => {
                 </div>
                 <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                   <Link
-                    href='/blog-details'
+                    href={localizePath('/blog-details')}
                     className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                     tabIndex={0}
                   >
-                    Read More
+                    {t("blogGrid.readMore")}
                     <i className='ph ph-arrow-right' />
                   </Link>
                 </div>

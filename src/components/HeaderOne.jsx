@@ -3,9 +3,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import $ from "jquery";
 import { usePathname } from "next/navigation";
+import { useLocale } from "@/context/LocaleContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const HeaderOne = () => {
   let pathname = usePathname();
+  const { t, localizePath } = useLocale();
+  const pathActive =
+    (pathname || "/").replace(/^\/(en|zh)(?=\/|$)/, "") || "/";
   const [scroll, setScroll] = useState(false);
   const [isMenuActive, setIsMenuActive] = useState(false);
   useEffect(() => {
@@ -60,11 +65,11 @@ const HeaderOne = () => {
   };
 
   const menuItems = [
-    { href: "/", label: "Home" },
-    { href: "/course", label: "Courses" },
-    { href: "/about", label: "About" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", labelKey: "nav.home" },
+    { href: "/course", labelKey: "nav.courses" },
+    { href: "/about", labelKey: "nav.about" },
+    { href: "/blog", labelKey: "nav.blog" },
+    { href: "/contact", labelKey: "nav.contact" },
   ];
 
   return (
@@ -76,8 +81,8 @@ const HeaderOne = () => {
             <div className='header-content-wrapper flex-align flex-grow-1'>
               {/* Logo Start */}
               <div className='logo'>
-                <Link href='/' className='link'>
-                  <img src='assets/images/logo/logo.png' alt='AllStar International Education' />
+                <Link href={localizePath("/")} className='link'>
+                  <img src='assets/images/logo/logo.png' alt={t("site.name")} />
                 </Link>
               </div>
               {/* Logo End  */}
@@ -92,12 +97,12 @@ const HeaderOne = () => {
                     name='state'
                     defaultValue='categories'
                   >
-                    <option value={"Categories"}>Categories</option>
-                    <option value={"CSC Updates"}>CSC Updates</option>
-                    <option value={"Scholarship News"}>Scholarship News</option>
-                    <option value={"Study Tips"}>Study Tips</option>
-                    <option value={"Visa Guidance"}>Visa Guidance</option>
-                    <option value={"IELTS / TOEFL Tips"}>IELTS / TOEFL Tips</option>
+                    <option value='categories'>{t("categories.label")}</option>
+                    <option value='csc'>{t("categories.cscUpdates")}</option>
+                    <option value='scholarship'>{t("categories.scholarshipNews")}</option>
+                    <option value='tips'>{t("categories.studyTips")}</option>
+                    <option value='visa'>{t("categories.visaGuidance")}</option>
+                    <option value='english'>{t("categories.ieltsToefl")}</option>
                   </select>
                 </div>
               </div>
@@ -112,18 +117,18 @@ const HeaderOne = () => {
                         className='nav-menu__item has-submenu'
                       >
                         <Link href='#' className='nav-menu__link'>
-                          {item.label}
+                          {t(item.labelKey)}
                         </Link>
                         <ul className={`nav-submenu scroll-sm`}>
                           {item.links.map((link, linkIndex) => (
                             <li
                               key={`submenu-item-${linkIndex}`}
                               className={`nav-submenu__item ${
-                                pathname == link.href && "activePage"
+                                pathActive == link.href && "activePage"
                               }`}
                             >
                               <Link
-                                href={link.href}
+                                href={localizePath(link.href)}
                                 className='nav-submenu__link hover-bg-neutral-30'
                               >
                                 {link.label}
@@ -136,11 +141,11 @@ const HeaderOne = () => {
                       <li
                         key={`menu-contact-${index}`}
                         className={`nav-menu__item ${
-                          pathname == item.href && "activePage"
+                          pathActive == item.href && "activePage"
                         }`}
                       >
-                        <Link href={item.href} className='nav-menu__link'>
-                          {item.label}
+                        <Link href={localizePath(item.href)} className='nav-menu__link'>
+                          {t(item.labelKey)}
                         </Link>
                       </li>
                     )
@@ -150,7 +155,10 @@ const HeaderOne = () => {
               {/* Menu End  */}
             </div>
             {/* Header Right start */}
-            <div className='header-right flex-align'>
+            <div className='header-right flex-align gap-12'>
+              <div className='d-none d-lg-block flex-shrink-0'>
+                <LanguageToggle />
+              </div>
               <form
                 action='#'
                 className='search-form position-relative d-xl-block d-none'
@@ -158,7 +166,7 @@ const HeaderOne = () => {
                 <input
                   type='text'
                   className='common-input rounded-pill bg-main-25 pe-48 border-neutral-30'
-                  placeholder='Search...'
+                  placeholder={t("common.searchPlaceholder")}
                 />
                 <button
                   type='submit'
@@ -168,7 +176,7 @@ const HeaderOne = () => {
                 </button>
               </form>
               <Link
-                href='sign-in'
+                href={localizePath("/sign-in")}
                 className='info-action w-52 h-52 bg-main-25 hover-bg-main-600 border border-neutral-30 rounded-circle flex-center text-2xl text-neutral-500 hover-text-white hover-border-main-600'
               >
                 <i className='ph ph-user-circle' />
@@ -195,8 +203,8 @@ const HeaderOne = () => {
           <i className='ph ph-x' />{" "}
         </button>
         <div className='mobile-menu__inner'>
-          <Link href='/' className='mobile-menu__logo'>
-            <img src='assets/images/logo/logo.png' alt='AllStar International Education' />
+          <Link href={localizePath("/")} className='mobile-menu__logo'>
+            <img src='assets/images/logo/logo.png' alt={t("site.name")} />
           </Link>
           <div className='mobile-menu__menu'>
             <ul className='nav-menu flex-align nav-menu--mobile'>
@@ -210,13 +218,13 @@ const HeaderOne = () => {
                     onClick={() => handleSubmenuClick(index)}
                   >
                     <Link href='#' className='nav-menu__link'>
-                      {item.label}
+                      {t(item.labelKey)}
                     </Link>
                     <ul className={`nav-submenu scroll-sm`}>
                       {item.links.map((link, linkIndex) => (
                         <li key={linkIndex} className='nav-submenu__item'>
                           <Link
-                            href={link.href}
+                            href={localizePath(link.href)}
                             className='nav-submenu__link hover-bg-neutral-30'
                           >
                             {link.label}
@@ -228,17 +236,20 @@ const HeaderOne = () => {
                 ) : (
                   <li
                     className={`nav-menu__item ${
-                      pathname == item.href && "activePage"
+                      pathActive == item.href && "activePage"
                     }`}
                     key={index}
                   >
-                    <Link href={item.href} className='nav-menu__link'>
-                      {item.label}
+                    <Link href={localizePath(item.href)} className='nav-menu__link'>
+                      {t(item.labelKey)}
                     </Link>
                   </li>
                 )
               )}
             </ul>
+            <div className='d-sm-none d-block mt-24'>
+              <LanguageToggle />
+            </div>
             <div className='d-sm-none d-block mt-24'>
               <div className='header-select border border-neutral-30 bg-main-25 rounded-pill position-relative'>
                 <span className='select-icon position-absolute top-50 translate-middle-y inset-inline-start-0 z-1 ms-lg-4 ms-12 text-xl pointer-event-none d-flex'>
@@ -248,12 +259,12 @@ const HeaderOne = () => {
                   className='js-example-basic-single border-0'
                   name='state'
                 >
-                  <option value={"Categories"}>Categories</option>
-                  <option value={"CSC Updates"}>CSC Updates</option>
-                  <option value={"Scholarship News"}>Scholarship News</option>
-                  <option value={"Study Tips"}>Study Tips</option>
-                  <option value={"Visa Guidance"}>Visa Guidance</option>
-                  <option value={"IELTS / TOEFL Tips"}>IELTS / TOEFL Tips</option>
+                  <option value='categories'>{t("categories.label")}</option>
+                  <option value='csc'>{t("categories.cscUpdates")}</option>
+                  <option value='scholarship'>{t("categories.scholarshipNews")}</option>
+                  <option value='tips'>{t("categories.studyTips")}</option>
+                  <option value='visa'>{t("categories.visaGuidance")}</option>
+                  <option value='english'>{t("categories.ieltsToefl")}</option>
                 </select>
               </div>
             </div>

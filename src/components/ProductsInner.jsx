@@ -2,8 +2,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import ReactSlider from "react-slider";
+import { useLocale } from "@/context/LocaleContext";
 
 const ProductsInner = () => {
+  const { t, localizePath, dict } = useLocale();
+  const productNames = dict.productsPage?.names ?? [];
   const [values, setValues] = useState([100, 1000]);
   let [sidebarActive, setSidebarActive] = useState(false);
   let sidebarControl = () => {
@@ -27,7 +30,7 @@ const ProductsInner = () => {
                 <div className='flex-between'>
                   <div className='flex-grow-1'>
                     <div className='flex-between'>
-                      <h4 className='mb-0'>Filters</h4>
+                      <h4 className='mb-0'>{t("productsPage.filters")}</h4>
                       <button
                         type='button'
                         onClick={sidebarControl}
@@ -43,7 +46,7 @@ const ProductsInner = () => {
                   <input
                     type='text'
                     className='common-input pe-48 rounded-pill bg-main-25'
-                    placeholder='Enter Your Email...'
+                    placeholder={t("productsPage.searchEmailPh")}
                   />
                   <button
                     type='submit'
@@ -55,7 +58,7 @@ const ProductsInner = () => {
                 <span className='d-block border border-neutral-30 border-dashed my-24' />
                 <div className='d-flex flex-column gap-32'>
                   <div className='col-sm-12'>
-                    <h6 className='text-lg mb-24 fw-semibold'>Gender</h6>
+                    <h6 className='text-lg mb-24 fw-semibold'>{t("productsPage.gender")}</h6>
                     <div className='d-flex flex-column gap-16'>
                       <div className='form-check common-check common-radio mb-0'>
                         <input
@@ -68,7 +71,7 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='Male'
                         >
-                          Male
+                          {t("productsPage.male")}
                         </label>
                       </div>
                       <div className='form-check common-check common-radio mb-0'>
@@ -82,7 +85,7 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='Female'
                         >
-                          Female
+                          {t("productsPage.female")}
                         </label>
                       </div>
                       <div className='form-check common-check common-radio mb-0'>
@@ -96,13 +99,13 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='kids'
                         >
-                          kids
+                          {t("productsPage.kids")}
                         </label>
                       </div>
                     </div>
                   </div>
                   <div className=''>
-                    <h6 className='text-lg mb-24 fw-semibold'>Category</h6>
+                    <h6 className='text-lg mb-24 fw-semibold'>{t("productsPage.category")}</h6>
                     <div className='d-flex flex-column gap-16'>
                       <div className='form-check common-check mb-0'>
                         <input
@@ -115,7 +118,7 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='All'
                         >
-                          All
+                          {t("productsPage.catAll")}
                         </label>
                       </div>
                       <div className='form-check common-check mb-0'>
@@ -129,7 +132,7 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='Shoes'
                         >
-                          Shoes
+                          {t("productsPage.catShoes")}
                         </label>
                       </div>
                       <div className='form-check common-check mb-0'>
@@ -143,7 +146,7 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='Apparel'
                         >
-                          Apparel
+                          {t("productsPage.catApparel")}
                         </label>
                       </div>
                       <div className='form-check common-check mb-0'>
@@ -157,13 +160,13 @@ const ProductsInner = () => {
                           className='form-check-label fw-normal flex-grow-1'
                           htmlFor='Accessories'
                         >
-                          Accessories
+                          {t("productsPage.catAccessories")}
                         </label>
                       </div>
                     </div>
                   </div>
                   <div className=''>
-                    <h6 className='text-lg mb-20 fw-medium'>Color</h6>
+                    <h6 className='text-lg mb-20 fw-medium'>{t("productsPage.color")}</h6>
                     <div className='color-list d-flex flex-wrap align-items-center gap-12'>
                       <button
                         type='button'
@@ -209,7 +212,7 @@ const ProductsInner = () => {
                   </div>
                   <div className=''>
                     <div>
-                      <h6 className='text-lg mb-20 fw-medium'>Pricing scale</h6>
+                      <h6 className='text-lg mb-20 fw-medium'>{t("productsPage.pricingScale")}</h6>
                       <div className='custom--range'>
                         <ReactSlider
                           className='horizontal-slider'
@@ -236,7 +239,7 @@ const ProductsInner = () => {
                     </div>
                   </div>
                   <div className=''>
-                    <h6 className='text-lg mb-20 fw-medium'>Star Category</h6>
+                    <h6 className='text-lg mb-20 fw-medium'>{t("productsPage.starCategory")}</h6>
                     <div className='d-flex flex-column gap-16'>
                       <div className='flex-between gap-16'>
                         <div className='form-check common-check mb-0'>
@@ -253,7 +256,7 @@ const ProductsInner = () => {
                             <span className='text-warning-600 text-xl d-flex'>
                               <i className='ph-fill ph-star' />
                             </span>
-                            5 Star
+                            {t("productsPage.star5")}
                           </label>
                         </div>
                       </div>
@@ -272,7 +275,7 @@ const ProductsInner = () => {
                             <span className='text-warning-600 text-xl d-flex'>
                               <i className='ph-fill ph-star' />
                             </span>
-                            4 Star
+                            {t("productsPage.star4")}
                           </label>
                         </div>
                       </div>
@@ -291,7 +294,7 @@ const ProductsInner = () => {
                             <span className='text-warning-600 text-xl d-flex'>
                               <i className='ph-fill ph-star' />
                             </span>
-                            3 Star
+                            {t("productsPage.star3")}
                           </label>
                         </div>
                       </div>
@@ -310,7 +313,7 @@ const ProductsInner = () => {
                             <span className='text-warning-600 text-xl d-flex'>
                               <i className='ph-fill ph-star' />
                             </span>
-                            2 Star
+                            {t("productsPage.star2")}
                           </label>
                         </div>
                       </div>
@@ -329,7 +332,7 @@ const ProductsInner = () => {
                             <span className='text-warning-600 text-xl d-flex'>
                               <i className='ph-fill ph-star' />
                             </span>
-                            1 Star
+                            {t("productsPage.star1")}
                           </label>
                         </div>
                       </div>
@@ -342,7 +345,7 @@ const ProductsInner = () => {
                   className='btn btn-outline-main rounded-pill flex-center gap-16 fw-semibold w-100'
                 >
                   <i className='ph-bold ph-arrow-clockwise d-flex text-lg' />
-                  Reset Filters
+                  {t("productsPage.resetFilters")}
                 </button>
               </form>
             </div>
@@ -350,17 +353,17 @@ const ProductsInner = () => {
           <div className='col-lg-9'>
             <div className='flex-between gap-16 flex-wrap mb-40'>
               <span className='text-neutral-500'>
-                Showing 9 of 600 Results{" "}
+                {t("common.showingPagedResults")}{" "}
               </span>
               <div className='flex-align gap-16'>
                 <div className='flex-align gap-8'>
                   <span className='text-neutral-500 flex-shrink-0'>
-                    Sort By :
+                    {t("blogGrid.sortBy")}
                   </span>
                   <select className='form-select ps-20 pe-28 py-8 fw-medium rounded-pill bg-main-25 border border-neutral-30 text-neutral-700'>
-                    <option value={1}>Newest</option>
-                    <option value={1}>Trending</option>
-                    <option value={1}>Popular</option>
+                    <option value={1}>{t("blogGrid.sortNewest")}</option>
+                    <option value={1}>{t("blogGrid.sortTrending")}</option>
+                    <option value={1}>{t("blogGrid.sortPopular")}</option>
                   </select>
                 </div>
                 <button
@@ -377,7 +380,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -397,10 +400,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Nike Air Force
+                            {productNames[0]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -438,7 +441,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -461,10 +464,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Athletic Sneaker
+                            {productNames[1]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -502,7 +505,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -522,10 +525,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Dressy Boots
+                            {productNames[2]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -563,7 +566,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -586,10 +589,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Popular Loafers
+                            {productNames[3]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -627,7 +630,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -650,10 +653,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Oxfords leather
+                            {productNames[4]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -691,7 +694,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -711,10 +714,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Dressy Boots
+                            {productNames[5]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -752,7 +755,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -775,10 +778,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Heeled Flats
+                            {productNames[6]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -816,7 +819,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -836,10 +839,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Pumps classic
+                            {productNames[7]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -877,7 +880,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -897,10 +900,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Heels stilettos
+                            {productNames[8]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -938,7 +941,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -961,10 +964,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Sandals various
+                            {productNames[9]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -1002,7 +1005,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -1022,10 +1025,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Heels Wedges
+                            {productNames[10]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>
@@ -1063,7 +1066,7 @@ const ProductsInner = () => {
                 <div className='scale-hover-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 bg-main-25 overflow-hidden position-relative max-h-unset min-h-252'>
                     <Link
-                      href='/product-details'
+                      href={localizePath('/product-details')}
                       className='w-100 h-100 d-flex justify-content-center align-items-center min-h-inherit'
                     >
                       <img
@@ -1086,10 +1089,10 @@ const ProductsInner = () => {
                       <div className='d-flex align-items-center justify-content-between mb-16'>
                         <h5 className='mb-0'>
                           <Link
-                            href='/product-details'
+                            href={localizePath('/product-details')}
                             className='link text-line-1'
                           >
-                            Mules flat sole
+                            {productNames[11]}
                           </Link>
                         </h5>
                         <div className='flex-shrink-0 d-flex gap-4'>

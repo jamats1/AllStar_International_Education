@@ -1,4 +1,9 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+
 const CheckoutInner = () => {
+  const { t } = useLocale();
   return (
     <div className='py-120'>
       <div className='container'>
@@ -6,14 +11,14 @@ const CheckoutInner = () => {
           <div className='row'>
             <div className='col-lg-8'>
               <div className='border border-neutral-30 rounded-12 bg-main-25 p-32 bg-main-25'>
-                <h4 className='mb-12'>Billing address</h4>
+                <h4 className='mb-12'>{t("checkout.billingAddress")}</h4>
                 <div className='d-flex align-items-center justify-content-between'>
                   <div className='text-neutral-500 text-md'>
-                    Transaction ID:{" "}
+                    {t("checkout.transactionId")}{" "}
                     <span className='text-neutral-700'>25246584</span>
                   </div>
                   <div className='text-neutral-500 text-md'>
-                    Total Payable Amount:{" "}
+                    {t("checkout.totalPayable")}{" "}
                     <span className='text-neutral-700'>$1115</span>
                   </div>
                 </div>
@@ -23,42 +28,42 @@ const CheckoutInner = () => {
                     <input
                       type='text'
                       className='common-input bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
-                      placeholder='Enter Name'
+                      placeholder={t("checkout.phName")}
                     />
                   </div>
                   <div className='col-sm-6 col-xs-6'>
                     <input
                       type='email'
                       className='common-input bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
-                      placeholder='Enter Email'
+                      placeholder={t("checkout.phEmail")}
                     />
                   </div>
                   <div className='col-sm-6 col-xs-6'>
                     <input
                       type='tel'
                       className='common-input bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
-                      placeholder='Enter Phone Number'
+                      placeholder={t("checkout.phPhone")}
                     />
                   </div>
                   <div className='col-sm-6 col-xs-6'>
                     <select className='common-input form-select bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'>
-                      <option value=''>USA</option>
-                      <option value=''>UK</option>
-                      <option value=''>Canada</option>
-                      <option value=''>Banlgadesh</option>
+                      <option value=''>{t("checkout.countryUsa")}</option>
+                      <option value=''>{t("checkout.countryUk")}</option>
+                      <option value=''>{t("checkout.countryCanada")}</option>
+                      <option value=''>{t("checkout.countryBangladesh")}</option>
                     </select>
                   </div>
                   <div className='col-sm-12'>
                     <textarea
                       className='common-input bg-white rounded-24 border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
-                      placeholder='Enter address'
+                      placeholder={t("checkout.phAddress")}
                       defaultValue={""}
                     />
                   </div>
                 </div>
               </div>
               <div className='border border-neutral-30 rounded-12 bg-main-25 p-32 bg-main-25 mt-24'>
-                <h4 className='mb-12'>Payment methods</h4>
+                <h4 className='mb-12'>{t("checkout.paymentMethods")}</h4>
                 <div className='d-flex align-items-center gap-24 flex-wrap'>
                   <div className='form-check common-check common-radio mb-0'>
                     <input
@@ -71,7 +76,7 @@ const CheckoutInner = () => {
                       className='form-check-label fw-normal flex-grow-1'
                       htmlFor='creditCard'
                     >
-                      Credit card
+                      {t("checkout.creditCard")}
                     </label>
                   </div>
                   <div className='form-check common-check common-radio mb-0'>
@@ -85,7 +90,7 @@ const CheckoutInner = () => {
                       className='form-check-label fw-normal flex-grow-1'
                       htmlFor='Debitcard'
                     >
-                      Debit card
+                      {t("checkout.debitCard")}
                     </label>
                   </div>
                   <div className='form-check common-check common-radio mb-0'>
@@ -99,7 +104,7 @@ const CheckoutInner = () => {
                       className='form-check-label fw-normal flex-grow-1'
                       htmlFor='PayPal'
                     >
-                      PayPal
+                      {t("checkout.payPal")}
                     </label>
                   </div>
                 </div>
@@ -110,13 +115,13 @@ const CheckoutInner = () => {
                       htmlFor='cardNumber'
                       className='text-neutral-700 text-lg fw-medium mb-12'
                     >
-                      Card number
+                      {t("checkout.cardNumber")}
                     </label>
                     <input
                       type='text'
                       className='common-input bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
                       id='cardNumber'
-                      placeholder='2456 1665 5155 5151'
+                      placeholder={t("checkout.phCard")}
                     />
                   </div>
                   <div className='col-sm-6 col-xs-6'>
@@ -124,7 +129,7 @@ const CheckoutInner = () => {
                       htmlFor='Expirydate'
                       className='text-neutral-700 text-lg fw-medium mb-12'
                     >
-                      Expiry date
+                      {t("checkout.expiryDate")}
                     </label>
                     <input
                       type='date'
@@ -137,13 +142,13 @@ const CheckoutInner = () => {
                       htmlFor='cvv'
                       className='text-neutral-700 text-lg fw-medium mb-12'
                     >
-                      CVC / CVV
+                      {t("checkout.cvc")}
                     </label>
                     <input
                       type='text'
                       className='common-input bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
                       id='cvv'
-                      placeholder='3 digits'
+                      placeholder={t("checkout.phCvv")}
                     />
                   </div>
                   <div className='col-sm-12'>
@@ -151,13 +156,13 @@ const CheckoutInner = () => {
                       htmlFor='nameCard'
                       className='text-neutral-700 text-lg fw-medium mb-12'
                     >
-                      Name on card
+                      {t("checkout.nameOnCard")}
                     </label>
                     <input
                       type='text'
                       className='common-input bg-white rounded-pill border-neutral-40 focus-border-main-600 placeholder-text-neutral-100'
                       id='nameCard'
-                      placeholder='Jab Archur'
+                      placeholder={t("checkout.phCardName")}
                     />
                   </div>
                 </div>
@@ -165,13 +170,13 @@ const CheckoutInner = () => {
             </div>
             <div className='col-lg-4'>
               <div className='border border-neutral-30 rounded-12 bg-main-25 p-24 bg-main-25'>
-                <span className='text-neutral-700 text-lg mb-12'>Price</span>
+                <span className='text-neutral-700 text-lg mb-12'>{t("orderSummary.price")}</span>
                 <div className='flex-align align-items-start flex-wrap gap-8'>
                   <div className='flex-align gap-12 text-neutral-700'>
                     <span className='text-2xl d-flex'>
                       <i className='ph-bold ph-tag' />
                     </span>
-                    <span className=''>From</span>
+                    <span className=''>{t("orderSummary.from")}</span>
                     <h2 className='mb-0'>$99.99</h2>
                   </div>
                   <button
@@ -179,7 +184,7 @@ const CheckoutInner = () => {
                     className='text-neutral-500 text-sm'
                     data-bs-toggle='tooltip'
                     data-bs-placement='top'
-                    data-bs-title='Initial Price'
+                    data-bs-title={t("orderSummary.initialPriceTooltip")}
                   >
                     <i className='ph-bold ph-info' />
                   </button>
@@ -187,16 +192,16 @@ const CheckoutInner = () => {
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 <div className='d-flex flex-column gap-24'>
                   <div className='d-flex align-items-center justify-content-between gap-4'>
-                    <span className='text-neutral-500'>Base Price</span>
+                    <span className='text-neutral-500'>{t("orderSummary.basePrice")}</span>
                     <span className='text-neutral-700 fw-medium'>$39.99</span>
                   </div>
                   <div className='d-flex align-items-center justify-content-between gap-4'>
-                    <span className='text-neutral-500'>State Tax</span>
+                    <span className='text-neutral-500'>{t("orderSummary.stateTax")}</span>
                     <span className='text-neutral-700 fw-medium'>$5</span>
                   </div>
                   <div className='d-flex align-items-center justify-content-between gap-4'>
-                    <span className='text-neutral-500'>Shipping</span>
-                    <span className='text-neutral-700 fw-medium'>Free</span>
+                    <span className='text-neutral-500'>{t("orderSummary.shipping")}</span>
+                    <span className='text-neutral-700 fw-medium'>{t("orderSummary.free")}</span>
                   </div>
                 </div>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
@@ -204,7 +209,7 @@ const CheckoutInner = () => {
                   <input
                     type='email'
                     className='form-control bg-white shadow-none border border-neutral-30 rounded-pill h-48 ps-24 pe-44 focus-border-main-600'
-                    placeholder='DISCOUNT9'
+                    placeholder={t("cart.discountPlaceholder")}
                   />
                   <button
                     type='submit'
@@ -214,12 +219,12 @@ const CheckoutInner = () => {
                   </button>
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-4'>
-                  <span className='text-neutral-500'>Discount</span>
+                  <span className='text-neutral-500'>{t("orderSummary.discount")}</span>
                   <span className='text-main-two-600 fw-medium'>-$9</span>
                 </div>
                 <span className='d-block border border-neutral-30 my-24 border-dashed' />
                 <div className='d-flex align-items-center justify-content-between gap-4'>
-                  <span className='text-neutral-500'>Total</span>
+                  <span className='text-neutral-500'>{t("orderSummary.total")}</span>
                   <span className='text-main-600 fw-medium'>$35.99</span>
                 </div>
                 <span className='d-block border border-neutral-30 mt-24 border-dashed' />
@@ -227,7 +232,7 @@ const CheckoutInner = () => {
                   type='submit'
                   className='btn btn-main rounded-pill w-100 mt-40'
                 >
-                  Check Out
+                  {t("orderSummary.checkout")}
                 </button>
               </div>
             </div>

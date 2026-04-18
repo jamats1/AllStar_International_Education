@@ -1,4 +1,9 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+
 const FAQInnerOne = () => {
+  const { t } = useLocale();
   return (
     <section className='faq-page py-120'>
       <div className='container'>
@@ -7,13 +12,10 @@ const FAQInnerOne = () => {
             <span className='text-main-600 text-2xl d-flex'>
               <i className='ph-bold ph-book' />
             </span>
-            <h5 className='text-main-600 mb-0'>FAQs</h5>
+            <h5 className='text-main-600 mb-0'>{t("faq.kicker")}</h5>
           </div>
-          <h2 className='mb-24'>Find Answers to Your Questions</h2>
-          <p className=''>
-            Welcome to our FAQs section! Here, we've compiled answers to some of
-            the most common questions our users ask.
-          </p>
+          <h2 className='mb-24'>{t("faq.heading")}</h2>
+          <p className=''>{t("faq.intro")}</p>
         </div>
         <div className='text-center mb-40'>
           <ul
@@ -33,7 +35,7 @@ const FAQInnerOne = () => {
                 aria-selected='true'
               >
                 <i className='text-xl text-main-600 d-flex ph-bold ph-user' />
-                Online Education
+                {t("faq.tabOnline")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -48,7 +50,7 @@ const FAQInnerOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl text-main-600 d-flex ph-bold ph-graduation-cap' />
-                Payment Method
+                {t("faq.tabPayment")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -63,7 +65,7 @@ const FAQInnerOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl text-main-600 d-flex ph-bold ph-star' />
-                Pricing Plan
+                {t("faq.tabPricing")}
               </button>
             </li>
           </ul>
@@ -92,7 +94,7 @@ const FAQInnerOne = () => {
                         aria-expanded='true'
                         aria-controls='collapseOne'
                       >
-                        How do I enroll in a course?
+                        {t("faq.qEnroll")}
                       </button>
                     </h2>
                     <div
@@ -101,11 +103,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -119,7 +117,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseTwo'
                       >
-                        Can I access my courses on mobile devices?
+                        {t("faq.qMobile")}
                       </button>
                     </h2>
                     <div
@@ -128,11 +126,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -146,7 +140,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseThree'
                       >
-                        How long do I have access to a course?
+                        {t("faq.qAccess")}
                       </button>
                     </h2>
                     <div
@@ -155,11 +149,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -173,7 +163,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFour'
                       >
-                        What if I need help or have questions during the course?
+                        {t("faq.qHelp")}
                       </button>
                     </h2>
                     <div
@@ -182,11 +172,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -200,7 +186,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFive'
                       >
-                        Do you offer refunds if I'm not satisfied with a course?
+                        {t("faq.qRefund")}
                       </button>
                     </h2>
                     <div
@@ -209,11 +195,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -234,7 +216,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseTwoEducation'
                       >
-                        Can I access my courses on mobile devices?
+                        {t("faq.qMobile")}
                       </button>
                     </h2>
                     <div
@@ -243,11 +225,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwooo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -261,7 +239,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseThreeEducation'
                       >
-                        How long do I have access to a course?
+                        {t("faq.qAccess")}
                       </button>
                     </h2>
                     <div
@@ -270,11 +248,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwooo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -288,7 +262,7 @@ const FAQInnerOne = () => {
                         aria-expanded='true'
                         aria-controls='collapseOneEducation'
                       >
-                        How do I enroll in a course?
+                        {t("faq.qEnroll")}
                       </button>
                     </h2>
                     <div
@@ -297,11 +271,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwooo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -315,7 +285,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFourEducation'
                       >
-                        What if I need help or have questions during the course?
+                        {t("faq.qHelp")}
                       </button>
                     </h2>
                     <div
@@ -324,11 +294,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwooo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -342,7 +308,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFiveEducation'
                       >
-                        Do you offer refunds if I'm not satisfied with a course?
+                        {t("faq.qRefund")}
                       </button>
                     </h2>
                     <div
@@ -351,11 +317,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwooo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -386,7 +348,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseTwoPaymentOne'
                       >
-                        Can I access my courses on mobile devices?
+                        {t("faq.qMobile")}
                       </button>
                     </h2>
                     <div
@@ -395,11 +357,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExamplePaymentOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -413,7 +371,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseThreePaymentOne'
                       >
-                        How long do I have access to a course?
+                        {t("faq.qAccess")}
                       </button>
                     </h2>
                     <div
@@ -422,11 +380,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExamplePaymentOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -440,7 +394,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFourPaymentOne'
                       >
-                        What if I need help or have questions during the course?
+                        {t("faq.qHelp")}
                       </button>
                     </h2>
                     <div
@@ -449,11 +403,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExamplePaymentOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -467,7 +417,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFivePaymentOne'
                       >
-                        Do you offer refunds if I'm not satisfied with a course?
+                        {t("faq.qRefund")}
                       </button>
                     </h2>
                     <div
@@ -476,11 +426,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExamplePaymentOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -494,7 +440,7 @@ const FAQInnerOne = () => {
                         aria-expanded='true'
                         aria-controls='collapseOnePaymentOne'
                       >
-                        How do I enroll in a course?
+                        {t("faq.qEnroll")}
                       </button>
                     </h2>
                     <div
@@ -503,11 +449,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExamplePaymentOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -528,7 +470,7 @@ const FAQInnerOne = () => {
                         aria-expanded='true'
                         aria-controls='collapseOnePaymentTwo'
                       >
-                        How do I enroll in a course?
+                        {t("faq.qEnroll")}
                       </button>
                     </h2>
                     <div
@@ -537,11 +479,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwoPaymentTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -555,7 +493,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseTwoPaymentTwo'
                       >
-                        Can I access my courses on mobile devices?
+                        {t("faq.qMobile")}
                       </button>
                     </h2>
                     <div
@@ -564,11 +502,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwoPaymentTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -582,7 +516,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseThreePaymentTwo'
                       >
-                        How long do I have access to a course?
+                        {t("faq.qAccess")}
                       </button>
                     </h2>
                     <div
@@ -591,11 +525,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwoPaymentTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -609,7 +539,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFourPaymentTwo'
                       >
-                        What if I need help or have questions during the course?
+                        {t("faq.qHelp")}
                       </button>
                     </h2>
                     <div
@@ -618,11 +548,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwoPaymentTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -636,7 +562,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFivePaymentTwo'
                       >
-                        Do you offer refunds if I'm not satisfied with a course?
+                        {t("faq.qRefund")}
                       </button>
                     </h2>
                     <div
@@ -645,11 +571,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwoPaymentTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -680,7 +602,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseTwoPricingOne'
                       >
-                        Can I access my courses on mobile devices?
+                        {t("faq.qMobile")}
                       </button>
                     </h2>
                     <div
@@ -689,11 +611,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOnePricingOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -707,7 +625,7 @@ const FAQInnerOne = () => {
                         aria-expanded='true'
                         aria-controls='collapseOnePricingOne'
                       >
-                        How do I enroll in a course?
+                        {t("faq.qEnroll")}
                       </button>
                     </h2>
                     <div
@@ -716,11 +634,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOnePricingOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -734,7 +648,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseThreePricingOne'
                       >
-                        How long do I have access to a course?
+                        {t("faq.qAccess")}
                       </button>
                     </h2>
                     <div
@@ -743,11 +657,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOnePricingOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -761,7 +671,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFourPricingOne'
                       >
-                        What if I need help or have questions during the course?
+                        {t("faq.qHelp")}
                       </button>
                     </h2>
                     <div
@@ -770,11 +680,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOnePricingOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -788,7 +694,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFivePricingOne'
                       >
-                        Do you offer refunds if I'm not satisfied with a course?
+                        {t("faq.qRefund")}
                       </button>
                     </h2>
                     <div
@@ -797,11 +703,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleOnePricingOne'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -822,7 +724,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseTwoEducationPricingTwo'
                       >
-                        Can I access my courses on mobile devices?
+                        {t("faq.qMobile")}
                       </button>
                     </h2>
                     <div
@@ -831,11 +733,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -849,7 +747,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseThreePricingTwo'
                       >
-                        How long do I have access to a course?
+                        {t("faq.qAccess")}
                       </button>
                     </h2>
                     <div
@@ -858,11 +756,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -876,7 +770,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFourPricingTwo'
                       >
-                        What if I need help or have questions during the course?
+                        {t("faq.qHelp")}
                       </button>
                     </h2>
                     <div
@@ -885,11 +779,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -903,7 +793,7 @@ const FAQInnerOne = () => {
                         aria-expanded='true'
                         aria-controls='collapseOnePricingTwo'
                       >
-                        How do I enroll in a course?
+                        {t("faq.qEnroll")}
                       </button>
                     </h2>
                     <div
@@ -912,11 +802,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>
@@ -930,7 +816,7 @@ const FAQInnerOne = () => {
                         aria-expanded='false'
                         aria-controls='collapseFivePricingTwo'
                       >
-                        Do you offer refunds if I'm not satisfied with a course?
+                        {t("faq.qRefund")}
                       </button>
                     </h2>
                     <div
@@ -939,11 +825,7 @@ const FAQInnerOne = () => {
                       data-bs-parent='#accordionExampleTwo'
                     >
                       <div className='accordion-body'>
-                        <p className='accordion-body__desc'>
-                          Once you enroll in a course, you'll have unlimited
-                          access to the course materials for as long as the
-                          course is available on our platform.
-                        </p>
+                        <p className='accordion-body__desc'>{t("faq.defaultAnswer")}</p>
                       </div>
                     </div>
                   </div>

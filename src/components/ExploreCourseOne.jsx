@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const ExploreCourseOne = () => {
+  const { t, localizePath } = useLocale();
   return (
     <section className='explore-course py-120 bg-main-25 position-relative z-1'>
       <img
@@ -11,21 +15,18 @@ const ExploreCourseOne = () => {
       <div className='container'>
         <div className='section-heading text-center style-flex gap-24'>
           <div className='section-heading__inner text-start'>
-            <h2 className='mb-0 wow bounceIn'>
-              CSC Prep &amp; Study Abroad Programs
-            </h2>
+            <h2 className='mb-0 wow bounceIn'>{t("explore.heading")}</h2>
           </div>
           <div className='section-heading__content'>
             <p className='section-heading__desc text-start mt-0 text-line-2 wow bounceInUp'>
-              HSK, Math, Physics, IELTS, TOEFL. Expert prep for scholarship &amp;
-              admission.
+              {t("explore.sub")}
             </p>
             <Link
-              href='/course'
+              href={localizePath("/course")}
               className='item-hover__text flex-align gap-8 text-main-600 mt-24 hover-text-decoration-underline transition-1'
               tabIndex={0}
             >
-              View All Programs
+              {t("common.viewAllPrograms")}
               <i className='ph ph-arrow-right' />
             </Link>
           </div>
@@ -51,7 +52,7 @@ const ExploreCourseOne = () => {
                 aria-selected='true'
               >
                 <i className='text-xl d-flex ph-bold ph-squares-four' />
-                All Categories
+                {t("explore.tabAll")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -66,7 +67,7 @@ const ExploreCourseOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl d-flex ph-bold ph-magic-wand' />
-                HSK
+                {t("explore.tabHsk")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -81,7 +82,7 @@ const ExploreCourseOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl d-flex ph-bold ph-code' />
-                Mathematics
+                {t("explore.tabMath")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -96,7 +97,7 @@ const ExploreCourseOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl d-flex ph-bold ph-code' />
-                Physics
+                {t("explore.tabPhysics")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -111,7 +112,7 @@ const ExploreCourseOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl d-flex ph-bold ph-graduation-cap' />
-                Mock Exams
+                {t("explore.tabMock")}
               </button>
             </li>
             <li className='nav-item' role='presentation'>
@@ -126,7 +127,7 @@ const ExploreCourseOne = () => {
                 aria-selected='false'
               >
                 <i className='text-xl d-flex ph-bold ph-chart-pie-slice' />
-                IELTS / TOEFL
+                {t("explore.tabEnglish")}
               </button>
             </li>
           </ul>
@@ -147,10 +148,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img1.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -171,10 +172,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          HSK Level 4–5 Preparation
+                          {t("courses.hsk45")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -183,7 +184,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -191,7 +192,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -209,7 +210,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img1.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -222,11 +223,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -240,10 +241,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img2.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -264,10 +265,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Mathematics for CSC Exam
+                          {t("courses.mathCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -276,7 +277,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -284,7 +285,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -302,7 +303,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img2.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -315,11 +316,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$499</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -333,10 +334,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img3.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -357,10 +358,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Physics for CSC Exam
+                          {t("courses.physicsCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -369,7 +370,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -377,7 +378,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -395,7 +396,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img3.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -408,11 +409,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$457</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -426,10 +427,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img4.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -450,10 +451,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          CSC Mock Exam – Comprehensive
+                          {t("courses.mockCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -462,7 +463,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -470,7 +471,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -488,7 +489,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img4.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -501,11 +502,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -519,10 +520,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img5.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -543,10 +544,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          IELTS Preparation for Study Abroad
+                          {t("courses.ieltsAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -555,7 +556,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -563,7 +564,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -581,7 +582,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img5.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -594,11 +595,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$546</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -612,10 +613,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img6.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -636,10 +637,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          TOEFL Preparation for Study Abroad
+                          {t("courses.toeflAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -648,7 +649,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -656,7 +657,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -674,7 +675,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img6.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -687,11 +688,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$345</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -715,10 +716,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img1.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -739,10 +740,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          HSK Level 4–5 Preparation
+                          {t("courses.hsk45")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -751,7 +752,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -759,7 +760,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -777,7 +778,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img1.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -790,11 +791,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -808,10 +809,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img2.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -832,10 +833,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Mathematics for CSC Exam
+                          {t("courses.mathCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -844,7 +845,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -852,7 +853,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -870,7 +871,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img2.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -883,11 +884,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$499</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -901,10 +902,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img3.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -925,10 +926,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Physics for CSC Exam
+                          {t("courses.physicsCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -937,7 +938,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -945,7 +946,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -963,7 +964,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img3.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -976,11 +977,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$457</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -994,10 +995,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img4.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1018,10 +1019,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          CSC Mock Exam – Comprehensive
+                          {t("courses.mockCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1030,7 +1031,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1038,7 +1039,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1056,7 +1057,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img4.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1069,11 +1070,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1087,10 +1088,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img5.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1111,10 +1112,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          IELTS Preparation for Study Abroad
+                          {t("courses.ieltsAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1123,7 +1124,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1131,7 +1132,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1149,7 +1150,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img5.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1162,11 +1163,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$546</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1180,10 +1181,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img6.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1204,10 +1205,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          TOEFL Preparation for Study Abroad
+                          {t("courses.toeflAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1216,7 +1217,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1224,7 +1225,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1242,7 +1243,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img6.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1255,11 +1256,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$345</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1283,10 +1284,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img1.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1307,10 +1308,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          HSK Level 4–5 Preparation
+                          {t("courses.hsk45")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1319,7 +1320,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1327,7 +1328,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1345,7 +1346,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img1.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1358,11 +1359,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1376,10 +1377,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img2.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1400,10 +1401,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Mathematics for CSC Exam
+                          {t("courses.mathCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1412,7 +1413,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1420,7 +1421,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1438,7 +1439,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img2.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1451,11 +1452,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$499</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1469,10 +1470,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img3.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1493,10 +1494,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Physics for CSC Exam
+                          {t("courses.physicsCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1505,7 +1506,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1513,7 +1514,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1531,7 +1532,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img3.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1544,11 +1545,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$457</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1562,10 +1563,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img4.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1586,10 +1587,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          CSC Mock Exam – Comprehensive
+                          {t("courses.mockCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1598,7 +1599,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1606,7 +1607,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1624,7 +1625,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img4.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1637,11 +1638,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1655,10 +1656,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img5.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1679,10 +1680,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          IELTS Preparation for Study Abroad
+                          {t("courses.ieltsAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1691,7 +1692,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1699,7 +1700,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1717,7 +1718,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img5.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1730,11 +1731,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$546</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1748,10 +1749,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img6.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1772,10 +1773,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          TOEFL Preparation for Study Abroad
+                          {t("courses.toeflAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1784,7 +1785,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1792,7 +1793,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1810,7 +1811,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img6.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1823,11 +1824,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$345</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1851,10 +1852,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img1.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1875,10 +1876,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          HSK Level 4–5 Preparation
+                          {t("courses.hsk45")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1887,7 +1888,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1895,7 +1896,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -1913,7 +1914,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img1.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -1926,11 +1927,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -1944,10 +1945,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img2.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -1968,10 +1969,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Mathematics for CSC Exam
+                          {t("courses.mathCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -1980,7 +1981,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -1988,7 +1989,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2006,7 +2007,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img2.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2019,11 +2020,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$499</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2037,10 +2038,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img3.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2061,10 +2062,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Physics for CSC Exam
+                          {t("courses.physicsCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2073,7 +2074,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2081,7 +2082,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2099,7 +2100,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img3.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2112,11 +2113,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$457</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2130,10 +2131,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img4.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2154,10 +2155,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          CSC Mock Exam – Comprehensive
+                          {t("courses.mockCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2166,7 +2167,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2174,7 +2175,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2192,7 +2193,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img4.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2205,11 +2206,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2223,10 +2224,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img5.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2247,10 +2248,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          IELTS Preparation for Study Abroad
+                          {t("courses.ieltsAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2259,7 +2260,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2267,7 +2268,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2285,7 +2286,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img5.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2298,11 +2299,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$546</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2316,10 +2317,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img6.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2340,10 +2341,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          TOEFL Preparation for Study Abroad
+                          {t("courses.toeflAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2352,7 +2353,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2360,7 +2361,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2378,7 +2379,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img6.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2391,11 +2392,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$345</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2419,10 +2420,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img1.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2443,10 +2444,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          HSK Level 4–5 Preparation
+                          {t("courses.hsk45")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2455,7 +2456,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2463,7 +2464,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2481,7 +2482,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img1.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2494,11 +2495,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2512,10 +2513,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img2.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2536,10 +2537,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Mathematics for CSC Exam
+                          {t("courses.mathCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2548,7 +2549,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2556,7 +2557,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2574,7 +2575,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img2.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2587,11 +2588,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$499</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2605,10 +2606,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img3.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2629,10 +2630,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Physics for CSC Exam
+                          {t("courses.physicsCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2641,7 +2642,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2649,7 +2650,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2667,7 +2668,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img3.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2680,11 +2681,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$457</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2698,10 +2699,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img4.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2722,10 +2723,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          CSC Mock Exam – Comprehensive
+                          {t("courses.mockCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2734,7 +2735,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2742,7 +2743,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2760,7 +2761,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img4.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2773,11 +2774,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2791,10 +2792,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img5.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2815,10 +2816,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          IELTS Preparation for Study Abroad
+                          {t("courses.ieltsAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2827,7 +2828,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2835,7 +2836,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2853,7 +2854,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img5.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2866,11 +2867,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$546</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2884,10 +2885,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img6.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -2908,10 +2909,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          TOEFL Preparation for Study Abroad
+                          {t("courses.toeflAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -2920,7 +2921,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -2928,7 +2929,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -2946,7 +2947,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img6.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -2959,11 +2960,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$345</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -2987,10 +2988,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img1.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -3011,10 +3012,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          HSK Level 4–5 Preparation
+                          {t("courses.hsk45")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -3023,7 +3024,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -3031,7 +3032,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -3049,7 +3050,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img1.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -3062,11 +3063,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -3080,10 +3081,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img2.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -3104,10 +3105,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Mathematics for CSC Exam
+                          {t("courses.mathCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -3116,7 +3117,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -3124,7 +3125,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -3142,7 +3143,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img2.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -3155,11 +3156,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$499</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -3173,10 +3174,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img3.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -3197,10 +3198,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          Physics for CSC Exam
+                          {t("courses.physicsCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -3209,7 +3210,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -3217,7 +3218,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -3235,7 +3236,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img3.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -3248,11 +3249,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$457</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -3266,10 +3267,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img4.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -3290,10 +3291,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          CSC Mock Exam – Comprehensive
+                          {t("courses.mockCsc")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -3302,7 +3303,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -3310,7 +3311,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -3328,7 +3329,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img4.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -3341,11 +3342,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$148</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -3359,10 +3360,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img5.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -3383,10 +3384,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          IELTS Preparation for Study Abroad
+                          {t("courses.ieltsAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -3395,7 +3396,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -3403,7 +3404,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -3421,7 +3422,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img5.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -3434,11 +3435,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$546</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>
@@ -3452,10 +3453,10 @@ const ExploreCourseOne = () => {
               >
                 <div className='course-item bg-white rounded-16 p-12 h-100 box-shadow-md'>
                   <div className='course-item__thumb rounded-12 overflow-hidden position-relative'>
-                    <Link href='/course-details' className='w-100 h-100'>
+                    <Link href={localizePath('/course-details')} className='w-100 h-100'>
                       <img
                         src='assets/images/thumbs/course-img6.png'
-                        alt='Program'
+                        alt={t('common.program')}
                         className='course-item__img rounded-12 cover-img transition-2'
                       />
                     </Link>
@@ -3476,10 +3477,10 @@ const ExploreCourseOne = () => {
                     <div className=''>
                       <h4 className='mb-28'>
                         <Link
-                          href='/course-details'
+                          href={localizePath('/course-details')}
                           className='link text-line-2'
                         >
-                          TOEFL Preparation for Study Abroad
+                          {t("courses.toeflAbroad")}
                         </Link>
                       </h4>
                       <div className='flex-between gap-8 flex-wrap mb-16'>
@@ -3488,7 +3489,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-video-camera' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Modules
+                            {t("courseCard.modules")}
                           </span>
                         </div>
                         <div className='flex-align gap-8'>
@@ -3496,7 +3497,7 @@ const ExploreCourseOne = () => {
                             <i className='ph-bold ph-chart-bar' />
                           </span>
                           <span className='text-neutral-700 text-lg fw-medium'>
-                            Beginner
+                            {t("courseCard.beginner")}
                           </span>
                         </div>
                       </div>
@@ -3514,7 +3515,7 @@ const ExploreCourseOne = () => {
                           <span className='text-neutral-700 text-2xl d-flex'>
                             <img
                               src='assets/images/thumbs/user-img6.png'
-                              alt='User Image'
+                              alt={t('common.userImageAlt')}
                               className='w-32 h-32 object-fit-cover rounded-circle'
                             />
                           </span>
@@ -3527,11 +3528,11 @@ const ExploreCourseOne = () => {
                     <div className='flex-between gap-8 pt-24 border-top border-neutral-50 mt-28 border-dashed border-0'>
                       <h4 className='mb-0 text-main-two-600'>$345</h4>
                       <Link
-                        href='/apply-admission'
+                        href={localizePath('/apply-admission')}
                         className='flex-align gap-8 text-main-600 hover-text-decoration-underline transition-1 fw-semibold'
                         tabIndex={0}
                       >
-                        Enroll Now
+                        {t("common.enrollNow")}
                         <i className='ph ph-arrow-right' />
                       </Link>
                     </div>

@@ -1,7 +1,10 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
+import { useLocale } from "@/context/LocaleContext";
 
 const SignUpInner = () => {
+  const { t, localizePath } = useLocale();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -14,11 +17,8 @@ const SignUpInner = () => {
           <div className='col-lg-6'>
             <div className='bg-main-25 border border-neutral-30 rounded-8 p-32'>
               <div className='mb-40'>
-                <h3 className='mb-16 text-neutral-500'>Let's Get Started!</h3>
-                <p className='text-neutral-500'>
-                  Please Enter your Email Address to Start your Online
-                  Application
-                </p>
+                <h3 className='mb-16 text-neutral-500'>{t("auth.getStarted")}</h3>
+                <p className='text-neutral-500'>{t("auth.signUpLead")}</p>
               </div>
               <form action='#'>
                 <div className='row gy-4'>
@@ -27,13 +27,13 @@ const SignUpInner = () => {
                       htmlFor='fname'
                       className='fw-medium text-lg text-neutral-500 mb-16'
                     >
-                      First Name
+                      {t("auth.firstName")}
                     </label>
                     <input
                       type='text'
                       className='common-input rounded-pill'
                       id='fname'
-                      placeholder='Enter Your First Name'
+                      placeholder={t("auth.firstNamePh")}
                     />
                   </div>
                   <div className='col-sm-6'>
@@ -41,13 +41,13 @@ const SignUpInner = () => {
                       htmlFor='lname'
                       className='fw-medium text-lg text-neutral-500 mb-16'
                     >
-                      Last Name
+                      {t("auth.lastName")}
                     </label>
                     <input
                       type='text'
                       className='common-input rounded-pill'
                       id='lname'
-                      placeholder='Enter Your Last Name'
+                      placeholder={t("auth.lastNamePh")}
                     />
                   </div>
                   <div className='col-sm-12'>
@@ -55,13 +55,13 @@ const SignUpInner = () => {
                       htmlFor='email'
                       className='fw-medium text-lg text-neutral-500 mb-16'
                     >
-                      Enter Your Email ID
+                      {t("auth.emailLabel")}
                     </label>
                     <input
                       type='email'
                       className='common-input rounded-pill'
                       id='email'
-                      placeholder='Enter Your Email...'
+                      placeholder={t("auth.emailPh")}
                     />
                   </div>
                   <div className='col-sm-12'>
@@ -69,14 +69,14 @@ const SignUpInner = () => {
                       htmlFor='password'
                       className='fw-medium text-lg text-neutral-500 mb-16'
                     >
-                      Password
+                      {t("auth.passwordShort")}
                     </label>
                     <div className='position-relative'>
                       <input
                         type={passwordVisible ? "text" : "password"}
                         className='common-input rounded-pill pe-44'
                         id='password'
-                        placeholder='Enter Your Password...'
+                        placeholder={t("auth.passwordPh")}
                       />
                       <span
                         className={`toggle-password position-absolute top-50 inset-inline-end-0 me-16 translate-middle-y ph-bold ${
@@ -88,13 +88,13 @@ const SignUpInner = () => {
                   </div>
                   <div className='col-sm-12'>
                     <p className='text-neutral-500 mt-8'>
-                      Have an accounts?
-                      <a
-                        href='sign-in.html'
+                      {t("auth.haveAccount")}
+                      <Link
+                        href={localizePath("/sign-in")}
                         className='fw-semibold text-main-600 hover-text-decoration-underline'
                       >
-                        Sign In
-                      </a>
+                        {t("auth.signInLink")}
+                      </Link>
                     </p>
                   </div>
                   <div className='col-sm-12'>
@@ -103,7 +103,7 @@ const SignUpInner = () => {
                         type='submit'
                         className='btn btn-main rounded-pill flex-center gap-8'
                       >
-                        Sign UP
+                        {t("auth.signUpBtn")}
                         <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                       </button>
                     </div>

@@ -1,4 +1,11 @@
+"use client";
+
+import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
+
 const CertificateOne = () => {
+  const { t, localizePath } = useLocale();
+
   return (
     <div className='certificate'>
       <div className='container container--lg'>
@@ -10,18 +17,16 @@ const CertificateOne = () => {
                   <div className='certificate__content'>
                     <div className='flex-align gap-8 mb-16 wow bounceInDown'>
                       <span className='w-8 h-8 bg-white rounded-circle' />
-                      <h5 className='text-white mb-0'>Get Ready</h5>
+                      <h5 className='text-white mb-0'>{t("certificate.kicker")}</h5>
                     </div>
-                    <h2 className='text-white mb-40 fw-medium wow bounceIn'>
-                      Preparation That Leads to Scholarship &amp; Admission
-                    </h2>
-                    <a
-                      href=''
+                    <h2 className='text-white mb-40 fw-medium wow bounceIn'>{t("certificate.heading")}</h2>
+                    <Link
+                      href={localizePath("/apply-admission")}
                       className='btn btn-white rounded-pill flex-align d-inline-flex gap-8 hover-bg-main-800 wow bounceInUp'
                     >
-                      Start Your Application
+                      {t("certificate.cta")}
                       <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-xl-6 d-xl-block d-none'>

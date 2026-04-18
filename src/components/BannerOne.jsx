@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
 
 const BannerOne = () => {
+  const { t, localizePath } = useLocale();
+
   return (
     <section className='banner py-80 position-relative overflow-hidden'>
       <img
@@ -34,48 +39,42 @@ const BannerOne = () => {
             <div className='banner-content pe-md-4'>
               <div className='flex-align gap-8 mb-16' data-aos='fade-down'>
                 <span className='w-8 h-8 bg-main-600 rounded-circle' />
-                <h5 className='text-main-600 mb-0'>
-                  {" "}
-                  CSC &amp; Study Abroad Prep
-                </h5>
+                <h5 className='text-main-600 mb-0'>{t("banner.kicker")}</h5>
               </div>
               <h1 className='display2 mb-24 wow bounceInLeft'>
-                Prepare for{" "}
+                {t("banner.titleBefore")}{" "}
                 <span
                   className='text-main-two-600 wow bounceInRight'
                   data-wow-duration='2s'
                   data-wow-delay='.5s'
                 >
-                  CSC
-                </span>
-                {" "}Scholarship &amp;{" "}
+                  {t("banner.titleCsc")}
+                </span>{" "}
+                {t("banner.titleMid")}{" "}
                 <span
                   className='text-main-600 wow bounceInUp'
                   data-wow-duration='1s'
                   data-wow-delay='.5s'
                 >
-                  Global Study
+                  {t("banner.titleGlobal")}
                 </span>
               </h1>
-              <p className='text-neutral-500 text-line-2 wow bounceInUp'>
-                AllStar prepares students for CSC scholarships and top global
-                universities. Expert prep, proven results.
-              </p>
+              <p className='text-neutral-500 text-line-2 wow bounceInUp'>{t("banner.subtitle")}</p>
               <div className='buttons-wrapper flex-align flex-wrap gap-24 mt-40'>
                 <Link
-                  href='/apply-admission?program=csc'
+                  href={`${localizePath("/apply-admission")}?program=csc`}
                   className='btn btn-main rounded-pill flex-align gap-8'
                   data-aos='fade-right'
                 >
-                  CSC Application
+                  {t("banner.ctaCsc")}
                   <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                 </Link>
                 <Link
-                  href='/apply-admission?program=abroad'
+                  href={`${localizePath("/apply-admission")}?program=abroad`}
                   className='btn btn-outline-main rounded-pill flex-align gap-8'
                   data-aos='fade-left'
                 >
-                  Study Abroad Application
+                  {t("banner.ctaAbroad")}
                   <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                 </Link>
               </div>
@@ -105,7 +104,7 @@ const BannerOne = () => {
                 className='banner-box one px-24 py-12 rounded-12 bg-white fw-medium box-shadow-lg d-inline-block'
                 data-aos='fade-down'
               >
-                <span className='text-main-600'>36k+</span> Enrolled Students
+                <span className='text-main-600'>36k+</span> {t("banner.enrolled")}
                 <div className='enrolled-students mt-12'>
                   <img
                     src='assets/images/thumbs/enroll-student-img1.png'
@@ -147,8 +146,8 @@ const BannerOne = () => {
                   <i className='ph ph-watch' />
                 </span>
                 <div>
-                  <h6 className='mb-4'>20% OFF</h6>
-                  <span className=''>For All Programs</span>
+                  <h6 className='mb-4'>{t("banner.promoTitle")}</h6>
+                  <span className=''>{t("banner.promoSub")}</span>
                 </div>
               </div>
               <div
@@ -159,9 +158,9 @@ const BannerOne = () => {
                   <i className='ph ph-phone-call' />
                 </span>
                 <div>
-                  <span className=''>Online Supports</span>
+                  <span className=''>{t("banner.onlineSupport")}</span>
                   <a
-                    href='tel:(704)555-0127'
+                    href='tel:+17045550127'
                     className='mt-8 fw-medium text-xl d-block text-main-600 hover-text-main-500'
                   >
                     (704) 555-0127

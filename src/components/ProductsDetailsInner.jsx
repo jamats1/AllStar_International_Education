@@ -2,8 +2,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import Slider from "react-slick";
+import { useLocale } from "@/context/LocaleContext";
 
 const ProductsDetailsInner = () => {
+  const { t, localizePath, dict } = useLocale();
+  const reviewComments = dict.blogDetails?.comments ?? [];
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
 
@@ -52,31 +55,31 @@ const ProductsDetailsInner = () => {
                 <div>
                   <img
                     src='/assets/images/thumbs/product-big-img1.png'
-                    alt='Product 1'
+                    alt={`${t("productDetails.imgProduct")} 1`}
                   />
                 </div>
                 <div>
                   <img
                     src='/assets/images/thumbs/product-big-img2.png'
-                    alt='Product 2'
+                    alt={`${t("productDetails.imgProduct")} 2`}
                   />
                 </div>
                 <div>
                   <img
                     src='/assets/images/thumbs/product-big-img3.png'
-                    alt='Product 3'
+                    alt={`${t("productDetails.imgProduct")} 3`}
                   />
                 </div>
                 <div>
                   <img
                     src='/assets/images/thumbs/product-big-img4.png'
-                    alt='Product 4'
+                    alt={`${t("productDetails.imgProduct")} 4`}
                   />
                 </div>
                 <div>
                   <img
                     src='/assets/images/thumbs/product-big-img3.png'
-                    alt='Product 5'
+                    alt={`${t("productDetails.imgProduct")} 5`}
                   />
                 </div>
               </Slider>
@@ -89,31 +92,31 @@ const ProductsDetailsInner = () => {
                 <div className='bg-main-25 rounded-8 border border-neutral-30 p-10 d-flex justify-content-center align-items-center'>
                   <img
                     src='/assets/images/thumbs/product-small-img1.png'
-                    alt='Small Product 1'
+                    alt={`${t("productDetails.imgSmall")} 1`}
                   />
                 </div>
                 <div className='bg-main-25 rounded-8 border border-neutral-30 p-10 d-flex justify-content-center align-items-center'>
                   <img
                     src='/assets/images/thumbs/product-small-img2.png'
-                    alt='Small Product 2'
+                    alt={`${t("productDetails.imgSmall")} 2`}
                   />
                 </div>
                 <div className='bg-main-25 rounded-8 border border-neutral-30 p-10 d-flex justify-content-center align-items-center'>
                   <img
                     src='/assets/images/thumbs/product-small-img3.png'
-                    alt='Small Product 3'
+                    alt={`${t("productDetails.imgSmall")} 3`}
                   />
                 </div>
                 <div className='bg-main-25 rounded-8 border border-neutral-30 p-10 d-flex justify-content-center align-items-center'>
                   <img
                     src='/assets/images/thumbs/product-small-img4.png'
-                    alt='Small Product 4'
+                    alt={`${t("productDetails.imgSmall")} 4`}
                   />
                 </div>
                 <div className='bg-main-25 rounded-8 border border-neutral-30 p-10 d-flex justify-content-center align-items-center'>
                   <img
                     src='/assets/images/thumbs/product-small-img3.png'
-                    alt='Small Product 5'
+                    alt={`${t("productDetails.imgSmall")} 5`}
                   />
                 </div>
               </Slider>
@@ -124,12 +127,12 @@ const ProductsDetailsInner = () => {
             <div className=''>
               <div className='d-flex flex-column gap-24 align-items-start'>
                 <span className='py-8 px-16 bg-main-two-600 rounded-8 text-white'>
-                  Sale
+                  {t("productDetails.sale")}
                 </span>
                 <span className='text-uppercase text-md text-success-600 fw-semibold'>
-                  IN STOCK
+                  {t("productDetails.inStock")}
                 </span>
-                <h3 className='mb-0'>Featured Learning Resource</h3>
+                <h3 className='mb-0'>{t("productDetails.featuredTitle")}</h3>
                 <div className='flex-align gap-8'>
                   <div className='flex-align gap-4'>
                     <span className='text-2xl fw-medium text-warning-600 d-flex'>
@@ -149,20 +152,19 @@ const ProductsDetailsInner = () => {
                     </span>
                   </div>
                   <span className='text-md text-neutral-500'>
-                    (3.36k reviews)
+                    {t("productDetails.reviewsShort")}
                   </span>
                 </div>
                 <h3 className='mb-0 text-main-600'>$95.25</h3>
                 <p className='text-neutral-500'>
-                  Covering the ankle or higher, boots can be dressy, rugged, or
-                  designed for specific activities like hiking or riding.
+                  {t("productDetails.shortDesc")}
                 </p>
               </div>
               <span className='d-block border border-neutral-30 border-dashed my-32' />
               <div className='d-flex flex-column gap-32 align-items-start'>
                 <div className='d-flex align-items-center justify-content-between gap-8 w-100'>
                   <span className='text-lg text-neutral-700 fw-medium'>
-                    Color
+                    {t("productDetails.color")}
                   </span>
                   <div className='color-list d-flex flex-wrap align-items-center gap-12'>
                     <button
@@ -204,7 +206,7 @@ const ProductsDetailsInner = () => {
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-8 w-100'>
                   <span className='text-lg text-neutral-700 fw-medium'>
-                    Size
+                    {t("productDetails.size")}
                   </span>
                   <select className='common-input w-auto bg-main-25 border border-main-100 rounded-pill'>
                     <option value={32}>32</option>
@@ -215,7 +217,7 @@ const ProductsDetailsInner = () => {
                 </div>
                 <div className='d-flex align-items-center justify-content-between gap-8 w-100'>
                   <span className='text-lg text-neutral-700 fw-medium'>
-                    Quantity
+                    {t("productDetails.quantity")}
                   </span>
                   <div className='border border-neutral-30 bg-main-25 rounded-pill p-4 max-w-116 w-100 d-flex justify-content-between'>
                     <button
@@ -244,18 +246,18 @@ const ProductsDetailsInner = () => {
               <span className='d-block border border-neutral-30 border-dashed my-32' />
               <div className='d-flex gap-24'>
                 <Link
-                  href='/cart'
+                  href={localizePath('/cart')}
                   className='flex-grow-1 btn btn-main rounded-pill flex-align gap-8'
                 >
                   <i className='ph ph-shopping-cart d-sm-flex d-none text-lg' />
-                  Add To Cart
+                  {t("productDetails.addToCart")}
                 </Link>
                 <Link
-                  href='/checkout'
+                  href={localizePath('/checkout')}
                   className='flex-grow-1 btn btn-outline-main rounded-pill flex-align gap-8'
                 >
                   <i className='ph ph-tag d-sm-flex d-none text-lg' />
-                  Buy Now
+                  {t("productDetails.buyNow")}
                 </Link>
               </div>
               <div className='mt-32 flex-align gap-24 justify-content-center flex-wrap'>
@@ -264,21 +266,21 @@ const ProductsDetailsInner = () => {
                   className='flex-align gap-12 text-neutral-500 hover-text-main-600 text-lg'
                 >
                   <i className='ph-bold ph-arrows-left-right d-flex' />
-                  Compare
+                  {t("productDetails.compare")}
                 </a>
                 <a
                   href='#'
                   className='flex-align gap-12 text-neutral-500 hover-text-main-600 text-lg'
                 >
                   <i className='ph-bold ph-heart d-flex' />
-                  Favorite
+                  {t("productDetails.favorite")}
                 </a>
                 <a
                   href='#'
                   className='flex-align gap-12 text-neutral-500 hover-text-main-600 text-lg'
                 >
                   <i className='ph-bold ph-share-network d-flex' />
-                  Share
+                  {t("productDetails.share")}
                 </a>
               </div>
             </div>
@@ -292,47 +294,38 @@ const ProductsDetailsInner = () => {
                 <img src='assets/images/thumbs/over-img.png' alt='' />
               </div>
               <div className=''>
-                <h3 className='mb-24'>Overview</h3>
+                <h3 className='mb-24'>{t("productDetails.overview")}</h3>
                 <p className='text-neutral-500 max-w-454'>
-                  AllStar International Education offers quality learning
-                  materials and resources to support your study abroad and
-                  scholarship journey.
+                  {t("productDetails.overviewP")}
                 </p>
               </div>
             </div>
             <span className='d-block border border-neutral-30 border-dashed my-32' />
             <div className=''>
-              <h4 className='mb-16'>Why This Resource:</h4>
+              <h4 className='mb-16'>{t("productDetails.whyHeading")}</h4>
               <p className='text-neutral-500'>
-                AllStar selects materials that support effective learning and
-                exam preparation. Our resources are chosen for clarity,
-                relevance to CSC and study abroad goals, and value for your
-                investment in your education.
+                {t("productDetails.whyP")}
               </p>
             </div>
             <span className='d-block border border-neutral-30 border-dashed my-32' />
             <div className=''>
-              <h5 className='mb-16'>Quality and Design:</h5>
+              <h5 className='mb-16'>{t("productDetails.qualityHeading")}</h5>
               <p className='text-neutral-500'>
-                AllStar learning materials are chosen for quality and clarity.
-                Whether you prefer print or digital, we offer resources to suit
-                different learning styles and study needs.
+                {t("productDetails.qualityP")}
               </p>
             </div>
             <span className='d-block border border-neutral-30 border-dashed my-32' />
             <div className=''>
-              <h6 className='mb-16'>Support for Your Studies:</h6>
+              <h6 className='mb-16'>{t("productDetails.supportHeading")}</h6>
               <p className='text-neutral-500'>
-                Our resources are designed to support effective study habits and
-                exam preparation. From CSC prep to language and test materials,
-                AllStar helps you stay organized and focused on your goals.
+                {t("productDetails.supportP")}
               </p>
             </div>
           </div>
           {/* Overview End */}
           {/* Reviews Start */}
           <div className='border border-neutral-30 rounded-12 bg-main-25 p-32 mt-24'>
-            <h5 className='mb-0'>Average Reviews</h5>
+            <h5 className='mb-0'>{t("productDetails.avgReviews")}</h5>
             <span className='d-block border border-neutral-30 my-32 border-dashed' />
             <div className='d-flex flex-sm-row flex-column gap-36'>
               <div className='rounded-16 px-40 py-24 flex-center flex-column flex-shrink-0 text-center bg-main-600 text-white'>
@@ -354,7 +347,7 @@ const ProductsDetailsInner = () => {
                     <i className='ph-fill ph-star-half' />
                   </span>
                 </div>
-                <span className='mt-8 text-gray-500'>26 Rating</span>
+                <span className='mt-8 text-gray-500'>{t("productDetails.ratingCount")}</span>
               </div>
               <div className='flex-grow-1'>
                 <div className='flex-align gap-20 mb-8'>
@@ -471,16 +464,16 @@ const ProductsDetailsInner = () => {
             </div>
             <span className='d-block border border-neutral-30 my-32 border-dashed' />
             <div className='flex-between gap-16 flex-wrap mb-24'>
-              <h6 className='mb-0'>All Reviews</h6>
+              <h6 className='mb-0'>{t("productDetails.allReviews")}</h6>
               <div className='flex-align gap-16'>
                 <div className='flex-align gap-8'>
                   <span className='text-neutral-500 flex-shrink-0'>
-                    Sort By :
+                    {t("blogGrid.sortBy")}
                   </span>
                   <select className='form-select ps-20 pe-28 py-8 fw-medium rounded-pill bg-main-25 border border-neutral-30 text-neutral-700'>
-                    <option value={1}>Newest</option>
-                    <option value={1}>Trending</option>
-                    <option value={1}>Popular</option>
+                    <option value={1}>{t("blogGrid.sortNewest")}</option>
+                    <option value={1}>{t("blogGrid.sortTrending")}</option>
+                    <option value={1}>{t("blogGrid.sortPopular")}</option>
                   </select>
                 </div>
               </div>
@@ -505,9 +498,7 @@ const ProductsDetailsInner = () => {
                 </span>
               </div>
               <p className='text-neutral-700'>
-                "This course was fantastic! The instructor's explanations were
-                clear and concise, making it easy to understand even the more
-                complex topics."
+                {reviewComments[0]?.body}
               </p>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='flex-align gap-24'>
@@ -517,9 +508,9 @@ const ProductsDetailsInner = () => {
                   className='w-60 h-60 rounded-circle cover-img'
                 />
                 <div className=''>
-                  <h6 className='text-xl mb-8 fw-medium'>Mary Johnson</h6>
+                  <h6 className='text-xl mb-8 fw-medium'>{reviewComments[0]?.name}</h6>
                   <span className='text-neutral-700 text-sm'>
-                    Project Manager
+                    {reviewComments[0]?.role}
                   </span>
                 </div>
               </div>
@@ -539,19 +530,19 @@ const ProductsDetailsInner = () => {
                   className='flex-align gap-8 text-neutral-500 hover-text-main-600'
                 >
                   <i className='text-xl d-flex ph-bold ph-chat-centered-text' />
-                  Reply
-                </a>
-              </div>
-              <div className='flex-align gap-20 mt-24'>
-                <img
-                  src='assets/images/thumbs/reviewer-img2.png'
+                    {t("blogDetails.reply")}
+                  </a>
+                </div>
+                <div className='flex-align gap-20 mt-24'>
+                  <img
+                    src='assets/images/thumbs/reviewer-img2.png'
                   alt=''
                   className='w-60 h-60 rounded-circle cover-img'
                 />
                 <input
                   type='text'
                   className='common-input rounded-pill bg-main-25 border-neutral-30 py-16'
-                  placeholder='Join the discussion...'
+                    placeholder={t("blogDetails.joinDiscussionPh")}
                 />
               </div>
             </div>
@@ -576,9 +567,7 @@ const ProductsDetailsInner = () => {
                 </span>
               </div>
               <p className='text-neutral-700'>
-                "Great course for beginners and advanced learners alike. The
-                projects were particularly helpful in applying what I learned.
-                Highly recommend!"
+                {reviewComments[1]?.body}
               </p>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='flex-align gap-24'>
@@ -588,9 +577,9 @@ const ProductsDetailsInner = () => {
                   className='w-60 h-60 rounded-circle cover-img'
                 />
                 <div className=''>
-                  <h6 className='text-xl mb-8 fw-medium'>Alice Brown</h6>
+                  <h6 className='text-xl mb-8 fw-medium'>{reviewComments[1]?.name}</h6>
                   <span className='text-neutral-700 text-sm'>
-                    Software Developer
+                    {reviewComments[1]?.role}
                   </span>
                 </div>
               </div>
@@ -610,7 +599,7 @@ const ProductsDetailsInner = () => {
                   className='flex-align gap-8 text-neutral-500 hover-text-main-600'
                 >
                   <i className='text-xl d-flex ph-bold ph-chat-centered-text' />
-                  Reply
+                  {t("blogDetails.reply")}
                 </a>
               </div>
             </div>
@@ -634,10 +623,8 @@ const ProductsDetailsInner = () => {
                   <i className='ph-fill ph-star-half' />
                 </span>
               </div>
-              <p className='text-neutral-700'>
-                "Dr. Smith is an amazing instructor. Her real-world experience
-                and teaching style made this course one of the best I've ever
-                taken."
+                           <p className='text-neutral-700'>
+                {reviewComments[2]?.body}
               </p>
               <span className='d-block border border-neutral-30 my-24 border-dashed' />
               <div className='flex-align gap-24'>
@@ -647,9 +634,9 @@ const ProductsDetailsInner = () => {
                   className='w-60 h-60 rounded-circle cover-img'
                 />
                 <div className=''>
-                  <h6 className='text-xl mb-8 fw-medium'>David Wilson</h6>
+                  <h6 className='text-xl mb-8 fw-medium'>{reviewComments[2]?.name}</h6>
                   <span className='text-neutral-700 text-sm'>
-                    Ethical Hacker
+                    {reviewComments[2]?.role}
                   </span>
                 </div>
               </div>
@@ -669,7 +656,7 @@ const ProductsDetailsInner = () => {
                   className='flex-align gap-8 text-neutral-500 hover-text-main-600'
                 >
                   <i className='text-xl d-flex ph-bold ph-chat-centered-text' />
-                  Reply
+                  {t("blogDetails.reply")}
                 </a>
               </div>
             </div>
@@ -678,7 +665,7 @@ const ProductsDetailsInner = () => {
               type='button'
               className='btn btn-main rounded-pill flex-center gap-8 mt-40'
             >
-              See All Reviews
+              {t("productDetails.seeAllReviews")}
               <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
             </button>
           </div>
@@ -686,20 +673,20 @@ const ProductsDetailsInner = () => {
           {/* Review Form Start */}
           <div className='border border-neutral-30 rounded-12 bg-main-25 p-32 mt-24'>
             <form action='#' id='commentForm'>
-              <h5 className='mb-0'>Write a Review</h5>
+              <h5 className='mb-0'>{t("productDetails.writeReview")}</h5>
               <span className='d-block border border-neutral-30 my-32 border-dashed' />
               <div className='mb-24'>
                 <label
                   htmlFor='name'
                   className='text-neutral-700 text-lg fw-medium mb-12'
                 >
-                  Name{" "}
+                  {t("blogDetails.labelName")}{" "}
                 </label>
                 <input
                   type='text'
                   className='common-input rounded-pill'
                   id='name'
-                  placeholder='Enter Name...'
+                  placeholder={t("contactPage.phName")}
                 />
               </div>
               <div className='mb-24'>
@@ -707,18 +694,18 @@ const ProductsDetailsInner = () => {
                   htmlFor='email'
                   className='text-neutral-700 text-lg fw-medium mb-12'
                 >
-                  Email{" "}
+                  {t("blogDetails.labelEmail")}{" "}
                 </label>
                 <input
                   type='email'
                   className='common-input rounded-pill'
                   id='email'
-                  placeholder='Enter Email...'
+                  placeholder={t("contactPage.phEmail")}
                 />
               </div>
               <div className='mb-24'>
                 <label className='text-neutral-700 text-lg fw-medium mb-12'>
-                  Star Reviews{" "}
+                  {t("blogDetails.starReviews")}{" "}
                 </label>
                 <div id='half-star-rating'>
                   <div className='rating-group'>
@@ -886,12 +873,12 @@ const ProductsDetailsInner = () => {
                   htmlFor='desc'
                   className='text-neutral-700 text-lg fw-medium mb-12'
                 >
-                  Your Question{" "}
+                  {t("blogDetails.yourQuestion")}{" "}
                 </label>
                 <textarea
                   id='desc'
                   className='common-input rounded-24'
-                  placeholder='Write you question...'
+                  placeholder={t("blogDetails.questionPh")}
                   defaultValue={""}
                 />
               </div>
@@ -900,7 +887,7 @@ const ProductsDetailsInner = () => {
                   type='submit'
                   className='btn btn-main rounded-pill flex-center gap-8 mt-40'
                 >
-                  Submit Review
+                  {t("productDetails.submitReview")}
                   <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                 </button>
               </div>

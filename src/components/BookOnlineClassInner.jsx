@@ -1,13 +1,17 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+
 const BookOnlineClassInner = () => {
+  const { t } = useLocale();
   return (
     <section className='py-120'>
       <div className='container'>
         <div className='border border-neutral-30 rounded-12 bg-main-25 p-24 bg-main-25'>
           <form action='#'>
-            <h3 className='mb-24'>Book online class</h3>
-            {/* Find Tutors Start */}
+            <h3 className='mb-24'>{t("bookClassForm.title")}</h3>
             <div className='border border-neutral-30 rounded-12 bg-white p-24'>
-              <h5 className='mb-0'>Fill Up Info</h5>
+              <h5 className='mb-0'>{t("bookClassForm.fillInfo")}</h5>
               <span className='d-block border border-main-50 my-24 border-dashed' />
               <div className='row gy-4'>
                 <div className='col-sm-6'>
@@ -15,14 +19,13 @@ const BookOnlineClassInner = () => {
                     htmlFor='name'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    {" "}
-                    Name <span className='text-danger-600'>*</span>{" "}
+                    {t("bookClassForm.name")} <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <input
                     type='text'
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600'
                     id='name'
-                    placeholder='Enter Name...'
+                    placeholder={t("bookClassForm.namePh")}
                   />
                 </div>
                 <div className='col-sm-6'>
@@ -30,13 +33,13 @@ const BookOnlineClassInner = () => {
                     htmlFor='email'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Email <span className='text-danger-600'>*</span>{" "}
+                    {t("bookClassForm.email")} <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <input
                     type='email'
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600'
                     id='email'
-                    placeholder='Enter Your Email...'
+                    placeholder={t("bookClassForm.emailPh")}
                   />
                 </div>
                 <div className='col-sm-6'>
@@ -44,13 +47,13 @@ const BookOnlineClassInner = () => {
                     htmlFor='Phone'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Mobile Number <span className='text-danger-600'>*</span>{" "}
+                    {t("bookClassForm.mobile")} <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <input
                     type='tel'
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600'
                     id='Phone'
-                    placeholder='Enter Your Number...'
+                    placeholder={t("bookClassForm.mobilePh")}
                   />
                 </div>
                 <div className='col-sm-6'>
@@ -58,18 +61,19 @@ const BookOnlineClassInner = () => {
                     htmlFor='selectClass'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Select Class
+                    {t("bookClassForm.selectClass")}
                     <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <select
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600 form-select py-14'
                     id='selectClass'
+                    defaultValue=''
                   >
-                    <option value='' selected='' hidden=''>
-                      Select Class
+                    <option value='' hidden>
+                      {t("bookClassForm.classPh")}
                     </option>
-                    <option value=''>Online Class</option>
-                    <option value=''>offline Class</option>
+                    <option value=''>{t("bookClassForm.onlineClass")}</option>
+                    <option value=''>{t("bookClassForm.offlineClass")}</option>
                   </select>
                 </div>
                 <div className='col-sm-12'>
@@ -77,21 +81,22 @@ const BookOnlineClassInner = () => {
                     htmlFor='selectCountry'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Select Country <span className='text-danger-600'>*</span>{" "}
+                    {t("bookClassForm.selectCountry")} <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <select
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600 form-select py-14'
                     id='selectCountry'
+                    defaultValue=''
                   >
-                    <option value='' selected='' hidden=''>
-                      Select Country
+                    <option value='' hidden>
+                      {t("bookClassForm.countryPh")}
                     </option>
-                    <option value=''>Bangladesh</option>
-                    <option value=''>Pakistan</option>
-                    <option value=''>Bhutan</option>
-                    <option value=''>Nepal</option>
-                    <option value=''>Australia</option>
-                    <option value=''>England</option>
+                    <option value=''>{t("checkout.countryBangladesh")}</option>
+                    <option value=''>{t("findTutorsForm.countryPakistan")}</option>
+                    <option value=''>{t("findTutorsForm.countryBhutan")}</option>
+                    <option value=''>{t("findTutorsForm.countryNepal")}</option>
+                    <option value=''>{t("findTutorsForm.countryAustralia")}</option>
+                    <option value=''>{t("findTutorsForm.countryEngland")}</option>
                   </select>
                 </div>
                 <div className='col-sm-12'>
@@ -99,13 +104,12 @@ const BookOnlineClassInner = () => {
                     type='submit'
                     className='btn btn-main rounded-pill flex-center gap-8 mt-16'
                   >
-                    Book A Class
+                    {t("bookClassForm.submit")}
                     <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                   </button>
                 </div>
               </div>
             </div>
-            {/* Find Tutors End */}
           </form>
         </div>
       </div>

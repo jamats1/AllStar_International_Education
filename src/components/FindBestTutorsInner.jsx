@@ -1,13 +1,17 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+
 const FindBestTutorsInner = () => {
+  const { t } = useLocale();
   return (
     <section className='py-120'>
       <div className='container'>
         <div className='border border-neutral-30 rounded-12 bg-main-25 p-24 bg-main-25'>
           <form action='#'>
-            <h3 className='mb-24'>Find Best Tutors</h3>
-            {/* Find Tutors Start */}
+            <h3 className='mb-24'>{t("findTutorsForm.title")}</h3>
             <div className='border border-neutral-30 rounded-12 bg-white p-24'>
-              <h5 className='mb-0'>Fill Up Info</h5>
+              <h5 className='mb-0'>{t("findTutorsForm.fillInfo")}</h5>
               <span className='d-block border border-main-50 my-24 border-dashed' />
               <div className='row gy-4'>
                 <div className='col-sm-6'>
@@ -15,13 +19,13 @@ const FindBestTutorsInner = () => {
                     htmlFor='location'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Location{" "}
+                    {t("findTutorsForm.location")}{" "}
                   </label>
                   <input
                     type='text'
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600'
                     id='location'
-                    placeholder='Enter location...'
+                    placeholder={t("findTutorsForm.locationPh")}
                   />
                 </div>
                 <div className='col-sm-6'>
@@ -29,24 +33,26 @@ const FindBestTutorsInner = () => {
                     htmlFor='selectLanguage'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Select Language <span className='text-danger-600'>*</span>{" "}
+                    {t("findTutorsForm.selectLanguage")}{" "}
+                    <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <select
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600 form-select py-14'
                     id='selectLanguage'
+                    defaultValue=''
                   >
-                    <option value='' selected='' hidden=''>
-                      Select language
+                    <option value='' hidden>
+                      {t("findTutorsForm.languagePh")}
                     </option>
-                    <option value=''>Bangla</option>
-                    <option value=''>Urdhu</option>
-                    <option value=''>English</option>
-                    <option value=''>Spenish</option>
+                    <option value=''>{t("findTutorsForm.langBangla")}</option>
+                    <option value=''>{t("findTutorsForm.langUrdu")}</option>
+                    <option value=''>{t("findTutorsForm.langEnglish")}</option>
+                    <option value=''>{t("findTutorsForm.langSpanish")}</option>
                   </select>
                 </div>
                 <div className='col-sm-12'>
                   <label className='text-neutral-700 text-lg fw-medium mb-12'>
-                    Gender <span className='text-danger-600'>*</span>{" "}
+                    {t("findTutorsForm.gender")} <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <div className='flex-align gap-24'>
                     <div className='form-check common-check common-radio mb-0'>
@@ -60,7 +66,7 @@ const FindBestTutorsInner = () => {
                         className='form-check-label fw-normal flex-grow-1'
                         htmlFor='Male'
                       >
-                        Male
+                        {t("findTutorsForm.male")}
                       </label>
                     </div>
                     <div className='form-check common-check common-radio mb-0'>
@@ -74,7 +80,7 @@ const FindBestTutorsInner = () => {
                         className='form-check-label fw-normal flex-grow-1'
                         htmlFor='Female'
                       >
-                        Female
+                        {t("findTutorsForm.female")}
                       </label>
                     </div>
                   </div>
@@ -84,18 +90,20 @@ const FindBestTutorsInner = () => {
                     htmlFor='selectDep'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Select Department <span className='text-danger-600'>*</span>{" "}
+                    {t("findTutorsForm.selectDepartment")}{" "}
+                    <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <select
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600 form-select py-14'
                     id='selectDep'
+                    defaultValue=''
                   >
-                    <option value='' selected='' hidden=''>
-                      Select Department
+                    <option value='' hidden>
+                      {t("findTutorsForm.departmentPh")}
                     </option>
-                    <option value=''>Arts</option>
-                    <option value=''>Science</option>
-                    <option value=''>Commerce</option>
+                    <option value=''>{t("findTutorsForm.deptArts")}</option>
+                    <option value=''>{t("findTutorsForm.deptScience")}</option>
+                    <option value=''>{t("findTutorsForm.deptCommerce")}</option>
                   </select>
                 </div>
                 <div className='col-sm-6'>
@@ -103,20 +111,22 @@ const FindBestTutorsInner = () => {
                     htmlFor='selectSub'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Select Department <span className='text-danger-600'>*</span>{" "}
+                    {t("findTutorsForm.selectSubject")}{" "}
+                    <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <select
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600 form-select py-14'
                     id='selectSub'
+                    defaultValue=''
                   >
-                    <option value='' selected='' hidden=''>
-                      Select Subject
+                    <option value='' hidden>
+                      {t("findTutorsForm.subjectPh")}
                     </option>
-                    <option value=''>English</option>
-                    <option value=''>Bangla</option>
-                    <option value=''>Social Science</option>
-                    <option value=''>Ecomomics</option>
-                    <option value=''>Math</option>
+                    <option value=''>{t("findTutorsForm.subEnglish")}</option>
+                    <option value=''>{t("findTutorsForm.subBangla")}</option>
+                    <option value=''>{t("findTutorsForm.subSocial")}</option>
+                    <option value=''>{t("findTutorsForm.subEconomics")}</option>
+                    <option value=''>{t("findTutorsForm.subMath")}</option>
                   </select>
                 </div>
                 <div className='col-sm-6'>
@@ -124,21 +134,23 @@ const FindBestTutorsInner = () => {
                     htmlFor='selectCountry'
                     className='text-neutral-700 text-lg fw-medium mb-12'
                   >
-                    Select Country <span className='text-danger-600'>*</span>{" "}
+                    {t("findTutorsForm.selectCountry")}{" "}
+                    <span className='text-danger-600'>*</span>{" "}
                   </label>
                   <select
                     className='common-input bg-main-25 rounded-pill border-transparent focus-border-main-600 form-select py-14'
                     id='selectCountry'
+                    defaultValue=''
                   >
-                    <option value='' selected='' hidden=''>
-                      Select Country
+                    <option value='' hidden>
+                      {t("findTutorsForm.countryPh")}
                     </option>
-                    <option value=''>Bangladesh</option>
-                    <option value=''>Pakistan</option>
-                    <option value=''>Bhutan</option>
-                    <option value=''>Nepal</option>
-                    <option value=''>Australia</option>
-                    <option value=''>England</option>
+                    <option value=''>{t("checkout.countryBangladesh")}</option>
+                    <option value=''>{t("findTutorsForm.countryPakistan")}</option>
+                    <option value=''>{t("findTutorsForm.countryBhutan")}</option>
+                    <option value=''>{t("findTutorsForm.countryNepal")}</option>
+                    <option value=''>{t("findTutorsForm.countryAustralia")}</option>
+                    <option value=''>{t("findTutorsForm.countryEngland")}</option>
                   </select>
                 </div>
                 <div className='col-sm-12'>
@@ -146,13 +158,12 @@ const FindBestTutorsInner = () => {
                     type='submit'
                     className='btn btn-main rounded-pill flex-center gap-8 mt-16'
                   >
-                    Find Now
+                    {t("findTutorsForm.submit")}
                     <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                   </button>
                 </div>
               </div>
             </div>
-            {/* Find Tutors End */}
           </form>
         </div>
       </div>
